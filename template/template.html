@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="びどりの個人サイト - ゲーム、TRPG、マーダーミステリー">
+    <title>{{TITLE}}</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="icon" type="image/webp" href="/assets/icon.webp">
+</head>
+<body class="{{BODY_CLASS}}">
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="site-title"><a href="/">bidri</a></h1>
+                <nav class="site-nav">
+                    {{NAV}}
+                </nav>
+            </div>
+        </div>
+    </header>
+    <main class="main-content">
+        <div class="container">
+            {{TOC}}
+            <article class="content">
+                {{CONTENT}}
+            </article>
+        </div>
+    </main>
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; {{YEAR}} bidri. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
