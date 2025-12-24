@@ -1,0 +1,26 @@
+---
+interface Props {
+  icon: string;
+  name: string;
+  message: string;
+}
+
+const { icon, name, message } = Astro.props;
+---
+
+<div class="flex flex-row md:flex-col items-center gap-lg mb-xl p-lg md:p-md rounded bg-gradient-to-br from-primary-light to-surface">
+  <div class="flex flex-col items-center gap-xs flex-shrink-0">
+    <img
+      src={icon}
+      alt={name}
+      class="w-[120px] h-[120px] md:w-[100px] md:h-[100px] max-[480px]:w-[80px] max-[480px]:h-[80px] rounded-full shadow-none m-0"
+    />
+    <div class="text-sm font-semibold text-primary-dark">
+      {name}
+    </div>
+  </div>
+  <div class="relative bg-white p-md rounded shadow-md max-w-[300px] text-[0.95rem] text-text flex-1">
+    <div class="absolute top-1/2 -left-2 -translate-y-1/2 w-0 h-0 border-t-[10px] border-t-transparent border-b-[10px] border-b-transparent border-r-[10px] border-r-white [filter:drop-shadow(-2px_0_2px_rgba(0,0,0,0.05))]"></div>
+    {message}
+  </div>
+</div>
