@@ -12,6 +12,16 @@ const currentPath = Astro.url.pathname;
 const pageTitle = title || PAGE_TITLES[currentPath] || SITE_TITLE;
 const hasSidebar = headings.length >= 2;
 const currentYear = new Date().getFullYear();
+
+const ga4Script = `<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TH1DBNP0G2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TH1DBNP0G2');
+</script>`;
 ---
 
 <!DOCTYPE html>
@@ -27,6 +37,8 @@ const currentYear = new Date().getFullYear();
     <link rel="icon" type="image/webp" href="/assets/icon.webp" />
   </head>
   <body class="min-h-screen flex flex-col bg-background text-text">
+    <Fragment set:html={ga4Script} />
+
     <header class="site-header bg-surface border-b-2 border-primary py-sm sticky top-0 z-[100]">
       <div class="container w-full max-w-container mx-auto px-md">
         <div class="header-content flex justify-between items-center gap-sm">
