@@ -6,7 +6,7 @@ interface Props {
 const { items } = Astro.props;
 ---
 
-<div class="scrollable-list max-h-[calc(1.6em*5.5+1rem)] overflow-y-auto bg-white border border-border rounded p-sm px-md mb-md relative">
+<div class="scrollable-list max-h-[calc(1.6em*5.5+1rem)] overflow-y-auto bg-surface border border-border rounded p-sm px-md mb-md relative">
   <ul class="m-0 list-inside">
     {items.map((item) => (
       <li class="mb-xs">{item}</li>
@@ -22,7 +22,7 @@ const { items } = Astro.props;
     left: 0;
     right: 0;
     height: 30px;
-    background: linear-gradient(to bottom, transparent, white);
+    background: linear-gradient(to bottom, transparent, #1E293B);
     pointer-events: none;
     border-radius: 0 0 8px 8px;
   }
@@ -32,17 +32,17 @@ const { items } = Astro.props;
   }
 
   .scrollable-list::-webkit-scrollbar-track {
-    background: #f8fafc;
+    background: #1E293B;
     border-radius: 8px;
   }
 
   .scrollable-list::-webkit-scrollbar-thumb {
-    background: #dbeafe;
+    background: #334155;
     border-radius: 8px;
     transition: background 150ms ease;
   }
 
   .scrollable-list::-webkit-scrollbar-thumb:hover {
-    background: #2563eb;
+    background: #38BDF8;
   }
 </style>

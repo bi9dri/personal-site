@@ -5,17 +5,20 @@ export default {
     extend: {
       colors: {
         primary: {
-          DEFAULT: '#2563eb',
-          dark: '#1e40af',
-          light: '#dbeafe',
+          DEFAULT: '#38BDF8',
+          dark: '#7DD3FC',
+          light: '#0EA5E9',
         },
-        background: '#ffffff',
-        surface: '#f8fafc',
+        background: '#0F172A',
+        surface: {
+          DEFAULT: '#1E293B',
+          elevated: '#334155',
+        },
         text: {
-          DEFAULT: '#1e293b',
-          muted: '#64748b',
+          DEFAULT: '#E2E8F0',
+          muted: '#94A3B8',
         },
-        border: '#e2e8f0',
+        border: '#334155',
       },
       spacing: {
         xs: '0.5rem',
