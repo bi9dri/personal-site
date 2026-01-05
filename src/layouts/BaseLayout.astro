@@ -84,7 +84,8 @@ const currentYear = new Date().getFullYear();
 <style is:global>
   /* Content styling */
   .content h1,
-  .content h2 {
+  .content h2,
+  .content h3 {
     font-weight: 600;
     color: #7DD3FC;
     margin-top: 2rem;
@@ -101,6 +102,11 @@ const currentYear = new Date().getFullYear();
     font-size: 1.5rem;
     padding-bottom: 0.5rem;
     border-bottom: 2px solid #334155;
+  }
+
+  .content h3 {
+    font-size: 1.25rem;
+    margin-top: 1.5rem;
   }
 
   .content p {
@@ -144,6 +150,10 @@ const currentYear = new Date().getFullYear();
     .content h2 {
       font-size: 1.25rem;
     }
+
+    .content h3 {
+      font-size: 1.125rem;
+    }
   }
 
   @media (max-width: 768px) {
@@ -157,6 +167,10 @@ const currentYear = new Date().getFullYear();
 
     .content h2 {
       font-size: 1.125rem;
+    }
+
+    .content h3 {
+      font-size: 1rem;
     }
   }
 

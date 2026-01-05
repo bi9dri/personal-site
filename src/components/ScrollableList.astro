@@ -1,17 +1,25 @@
 ---
 interface Props {
   items: string[];
+  title?: string;
 }
 
-const { items } = Astro.props;
+const { items, title } = Astro.props;
 ---
 
-<div class="scrollable-list max-h-[calc(1.6em*5.5+1rem)] overflow-y-auto bg-surface border border-border rounded p-sm px-md mb-md relative">
-  <ul class="m-0 list-inside">
-    {items.map((item) => (
-      <li class="mb-xs">{item}</li>
-    ))}
-  </ul>
+<div class="scrollable-list-container bg-surface border border-border rounded mb-md">
+  {title && (
+    <div class="px-md py-xs border-b border-border font-medium">
+      {title}
+    </div>
+  )}
+  <div class="scrollable-list max-h-[calc(1.6em*5.5+1rem)] overflow-y-auto p-sm px-md relative">
+    <ul class="m-0 list-inside">
+      {items.map((item) => (
+        <li class="mb-xs">{item}</li>
+      ))}
+    </ul>
+  </div>
 </div>
 
 <style>
