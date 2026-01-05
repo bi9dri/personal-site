@@ -1,0 +1,27 @@
+---
+import { NAV_ITEMS } from '../config';
+
+interface Props {
+  currentPath: string;
+}
+
+const { currentPath } = Astro.props;
+---
+
+<nav class="flex gap-2 flex-wrap">
+  {NAV_ITEMS.map((item) => (
+    <a
+      href={item.href}
+      class:list={[
+        'px-4 py-2 rounded transition-colors',
+        item.internal && currentPath === item.href
+          ? 'bg-primary text-white'
+          : 'text-primary-dark hover:bg-primary-light',
+      ]}
+      target={item.internal ? undefined : '_blank'}
+      rel={item.internal ? undefined : 'noopener noreferrer'}
+    >
+      {item.label}
+    </a>
+  ))}
+</nav>

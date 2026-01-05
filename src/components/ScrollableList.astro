@@ -1,0 +1,48 @@
+---
+interface Props {
+  items: string[];
+}
+
+const { items } = Astro.props;
+---
+
+<div class="scrollable-list max-h-[calc(1.6em*5.5+1rem)] overflow-y-auto bg-surface border border-border rounded p-sm px-md mb-md relative">
+  <ul class="m-0 list-inside">
+    {items.map((item) => (
+      <li class="mb-xs">{item}</li>
+    ))}
+  </ul>
+</div>
+
+<style>
+  .scrollable-list::after {
+    content: "";
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 30px;
+    background: linear-gradient(to bottom, transparent, #1E293B);
+    pointer-events: none;
+    border-radius: 0 0 8px 8px;
+  }
+
+  .scrollable-list::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .scrollable-list::-webkit-scrollbar-track {
+    background: #1E293B;
+    border-radius: 8px;
+  }
+
+  .scrollable-list::-webkit-scrollbar-thumb {
+    background: #334155;
+    border-radius: 8px;
+    transition: background 150ms ease;
+  }
+
+  .scrollable-list::-webkit-scrollbar-thumb:hover {
+    background: #38BDF8;
+  }
+</style>
