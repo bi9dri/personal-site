@@ -1,16 +1,11 @@
 ---
-import Navigation from '../components/Navigation.astro';
-import { PAGE_TITLES, SITE_TITLE } from '../config';
-
 interface Props {
   title?: string;
   headings?: { id: string; text: string }[];
 }
 
 const { title, headings = [] } = Astro.props;
-const currentPath = Astro.url.pathname;
-const pageTitle = title || PAGE_TITLES[currentPath] || SITE_TITLE;
-const hasSidebar = headings.length >= 2;
+const pageTitle = title || 'bidri';
 const currentYear = new Date().getFullYear();
 
 const ga4Script = `<!-- Google tag (gtag.js) -->
@@ -45,41 +40,34 @@ const ga4Script = `<!-- Google tag (gtag.js) -->
           <h1 class="text-2xl md:text-xl max-[480px]:text-lg font-bold text-primary-dark m-0">
             <a href="/" class="no-underline text-primary-dark hover:text-primary transition-colors">bidri</a>
           </h1>
-          <Navigation currentPath={currentPath} />
         </div>
       </div>
     </header>
 
     <main class="main-content flex-1 py-xl max-[480px]:py-lg">
       <div class="container w-full max-w-container mx-auto px-md">
-        {hasSidebar ? (
-          <div class="grid grid-cols-[200px_1fr] gap-lg items-start max-lg:grid-cols-1">
-            <aside class="toc-sidebar sticky top-20 max-lg:static max-lg:mb-md">
-              <nav class="toc-nav">
-                <h2 class="text-sm font-semibold text-text-muted mb-sm uppercase tracking-wide">目次</h2>
-                <ul class="space-y-xs max-lg:flex max-lg:flex-wrap max-lg:gap-2 max-lg:space-y-0">
-                  {headings.map((heading) => (
-                    <li class="max-lg:inline-block">
-                      <a
-                        href={`#${heading.id}`}
-                        class="block text-sm text-primary-dark hover:text-primary transition-colors max-lg:bg-surface max-lg:px-3 max-lg:py-1.5 max-lg:rounded max-lg:hover:bg-primary-light"
-                      >
-                        {heading.text}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </nav>
-            </aside>
-            <article class="content">
-              <slot />
-            </article>
-          </div>
-        ) : (
+        <div class="grid grid-cols-[200px_1fr] gap-lg items-start max-lg:grid-cols-1">
+          <aside class="toc-sidebar sticky top-20 max-lg:static max-lg:mb-md">
+            <nav class="toc-nav">
+              <h2 class="text-sm font-semibold text-text-muted mb-sm uppercase tracking-wide">目次</h2>
+              <ul class="space-y-xs max-lg:flex max-lg:flex-wrap max-lg:gap-2 max-lg:space-y-0">
+                {headings.map((heading) => (
+                  <li class="max-lg:inline-block">
+                    <a
+                      href={`#${heading.id}`}
+                      class="block text-sm text-primary-dark hover:text-primary transition-colors max-lg:bg-surface max-lg:px-3 max-lg:py-1.5 max-lg:rounded max-lg:hover:bg-primary-light"
+                    >
+                      {heading.text}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </aside>
           <article class="content">
             <slot />
           </article>
-        )}
+        </div>
       </div>
     </main>
 
