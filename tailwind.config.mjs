@@ -29,8 +29,7 @@ export default {
         '2xl': '4rem',
       },
       maxWidth: {
-        container: '800px',
-        'container-wide': '1200px',
+        container: '1200px',
       },
       width: {
         sidebar: '240px',
