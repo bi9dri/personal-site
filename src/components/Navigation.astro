@@ -1,4 +1,5 @@
 ---
+import { Icon } from 'astro-icon/components';
 import { NAV_ITEMS } from '../config';
 
 interface Props {
@@ -13,7 +14,7 @@ const { currentPath } = Astro.props;
     <a
       href={item.href}
       class:list={[
-        'px-4 py-2 rounded transition-colors',
+        'px-4 py-2 rounded transition-colors inline-flex items-center',
         item.internal && currentPath === item.href
           ? 'bg-primary text-white'
           : 'text-primary-dark hover:bg-primary-light',
@@ -21,7 +22,10 @@ const { currentPath } = Astro.props;
       target={item.internal ? undefined : '_blank'}
       rel={item.internal ? undefined : 'noopener noreferrer'}
     >
-      {item.label}
+      <span>{item.label}</span>
+      {!item.internal && (
+        <Icon name="heroicons-outline:external-link" class="ml-1 inline-block" />
+      )}
     </a>
   ))}
 </nav>
