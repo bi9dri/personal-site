@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-びどりの個人サイト。Astro + Tailwind CSSで構築された静的サイト。
+bidriの個人サイト。Astro + Tailwind CSSで構築された静的サイト。
 
 ## Tech Stack
 
@@ -48,24 +48,31 @@ bun run preview # ビルド結果プレビュー
 ## Components
 
 ### BaseLayout
+
 共通のHTML構造、ヘッダー、フッター、目次サイドバーを提供。
+
 - `title`: ページタイトル
 - `headings`: 目次用の見出し配列（2つ以上でサイドバー表示）
 
 ### Navigation
+
 NAV_ITEMSに基づいてナビゲーションリンクを生成。
+
 - 内部リンク: アクティブ状態のハイライト
 - 外部リンク: 新しいタブで開く
 
 ### ProfileHeader
+
 プロフィールページのヘッダー。アイコンと吹き出しメッセージを表示。
 
 ### ScrollableList
+
 スクロール可能なリスト。最大5.5行表示、下部にフェードグラデーション。
 
 ## Design System
 
 ### Colors (Dark Theme)
+
 ```
 primary:      #38BDF8 (sky blue)
 primary-dark: #7DD3FC (lighter blue for text)
@@ -75,6 +82,7 @@ text:         #E2E8F0 (light gray)
 ```
 
 ### Spacing Scale
+
 ```
 xs: 0.5rem (8px)
 sm: 1rem (16px)
@@ -84,6 +92,7 @@ xl: 3rem (48px)
 ```
 
 ### Breakpoints
+
 - 1024px: サイドバーが横並びレイアウトに変更
 - 768px: ヘッダーが縦並びに、フォントサイズ縮小
 - 480px: さらにコンパクトなレイアウト
@@ -91,6 +100,7 @@ xl: 3rem (48px)
 ## Configuration
 
 ### src/config.ts
+
 ```typescript
 // ナビゲーション項目
 export const NAV_ITEMS: NavItem[] = [
@@ -109,12 +119,8 @@ export const PAGE_TITLES: Record<string, string> = {
 ## Deployment
 
 GitHub Actionsで自動デプロイ:
+
 1. mainブランチへのpush時に発火
 2. Bunで依存関係インストール・ビルド
 3. GitHub Pagesにデプロイ
 4. bidri.devでアクセス可能
-
-### 手動設定（初回のみ）
-1. GitHub Settings → Pages → Source: GitHub Actions
-2. Custom domain: bidri.dev
-3. DNSでAレコードをGitHub Pagesに向ける
