@@ -1,0 +1,1153 @@
+{
+  "version": "2.6",
+  "children": [
+    {
+      "type": "frame",
+      "id": "ALKeH",
+      "x": 0,
+      "y": 0,
+      "name": "bidri Personal Site",
+      "width": 1440,
+      "fill": "#0F172A",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "fH5nH",
+          "name": "Header",
+          "width": "fill_container",
+          "fill": "#1E293B",
+          "padding": [
+            16,
+            24
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "zmw3G",
+              "name": "headerContainer",
+              "width": "fill_container",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "syhkF",
+                  "name": "logo",
+                  "fill": "#7DD3FC",
+                  "content": "bidri",
+                  "fontFamily": "Inter",
+                  "fontSize": 24,
+                  "fontWeight": "bold"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "QDJcp",
+          "name": "Main Content",
+          "width": "fill_container",
+          "gap": 32,
+          "padding": [
+            48,
+            24
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "WGoTn",
+              "name": "Sidebar",
+              "width": 200,
+              "layout": "vertical",
+              "gap": 8,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "gqhVm",
+                  "name": "tocTitle",
+                  "fill": "#94A3B8",
+                  "content": "目次",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "semibold"
+                },
+                {
+                  "type": "text",
+                  "id": "jJcOR",
+                  "name": "tocItem1",
+                  "fill": "#7DD3FC",
+                  "content": "外部リンク",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "urT5w",
+                  "name": "tocItem2",
+                  "fill": "#7DD3FC",
+                  "content": "アークナイツ",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "jvcTW",
+                  "name": "tocItem3",
+                  "fill": "#7DD3FC",
+                  "content": "アークナイツ：エンドフィールド",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "lySdj",
+                  "name": "tocItem4",
+                  "fill": "#7DD3FC",
+                  "content": "Fate/Grand Order",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "mxJJG",
+                  "name": "tocItem5",
+                  "fill": "#7DD3FC",
+                  "content": "マーダーミステリー",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "kNWms",
+                  "name": "tocItem6",
+                  "fill": "#7DD3FC",
+                  "content": "クトゥルフ神話TRPG",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "o6oi0",
+                  "name": "tocItem7",
+                  "fill": "#7DD3FC",
+                  "content": "エモクロアTRPG",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "58Fb2",
+                  "name": "tocItem8",
+                  "fill": "#7DD3FC",
+                  "content": "その他アナログゲーム",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "kkZjo",
+              "name": "Content Area",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 48,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "NHSOe",
+                  "name": "Profile Header",
+                  "width": "fill_container",
+                  "gap": 24,
+                  "padding": [
+                    24,
+                    0
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "ellipse",
+                      "id": "0BFiZ",
+                      "name": "Profile Icon",
+                      "fill": "#E2E8F0",
+                      "width": 120,
+                      "height": 120
+                    },
+                    {
+                      "type": "frame",
+                      "id": "C9Xk5",
+                      "name": "Speech Bubble",
+                      "width": 300,
+                      "fill": "#334155",
+                      "cornerRadius": 8,
+                      "layout": "vertical",
+                      "padding": [
+                        16,
+                        20
+                      ],
+                      "justifyContent": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "2J0ug",
+                          "name": "message",
+                          "fill": "#E2E8F0",
+                          "content": "不労所得で生きていきたい",
+                          "fontFamily": "Inter",
+                          "fontSize": 15,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "W8YHt",
+                  "name": "Links Section",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 24,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "EzG6u",
+                      "name": "linksHeading",
+                      "fill": "#7DD3FC",
+                      "content": "外部リンク",
+                      "fontFamily": "Inter",
+                      "fontSize": 24,
+                      "fontWeight": "semibold"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "ExpWJ",
+                      "name": "Social Icons",
+                      "width": "fill_container",
+                      "gap": 24,
+                      "padding": [
+                        16,
+                        0
+                      ],
+                      "children": [
+                        {
+                          "type": "rectangle",
+                          "cornerRadius": 6,
+                          "id": "n4eJg",
+                          "name": "bskyIcon",
+                          "fill": "#38BDF8",
+                          "width": 24,
+                          "height": 24
+                        },
+                        {
+                          "type": "rectangle",
+                          "cornerRadius": 6,
+                          "id": "Hk1SO",
+                          "name": "xIcon",
+                          "fill": "#38BDF8",
+                          "width": 24,
+                          "height": 24
+                        },
+                        {
+                          "type": "rectangle",
+                          "cornerRadius": 6,
+                          "id": "XH7j7",
+                          "name": "misskeyIcon",
+                          "fill": "#38BDF8",
+                          "width": 24,
+                          "height": 24
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "tgIWl",
+                      "name": "Text Links",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 12,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "IbRtg",
+                          "name": "link1",
+                          "fill": "#38BDF8",
+                          "content": "サイド・オリパシー - エモクロアTRPGでアークナイツを遊べる非公式の追加ルール",
+                          "fontFamily": "Inter",
+                          "fontSize": 16,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "SNHj9",
+                          "name": "link2",
+                          "fill": "#38BDF8",
+                          "content": "予定 (Notion)",
+                          "fontFamily": "Inter",
+                          "fontSize": 16,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "QCKQY",
+                  "name": "Arknights Section",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 24,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "LyBzZ",
+                      "name": "akHeading",
+                      "fill": "#7DD3FC",
+                      "content": "アークナイツ",
+                      "fontFamily": "Inter",
+                      "fontSize": 24,
+                      "fontWeight": "semibold"
+                    },
+                    {
+                      "type": "rectangle",
+                      "cornerRadius": 8,
+                      "id": "d0KT5",
+                      "name": "Arknights Image",
+                      "fill": "#334155",
+                      "width": "fill_container",
+                      "height": 400
+                    },
+                    {
+                      "type": "text",
+                      "id": "wTntE",
+                      "name": "akText",
+                      "fill": "#E2E8F0",
+                      "content": "事前登録から（たぶん）毎日遊んでるドクター。\nストーリー、世界観が大好き。\n全オペレーター雇用済み、昇進済み。勲章全て取得済み。\n特化は全部やろうかなーと思い立ってコツコツ進めてるところ。\nモジュールデータもっとください🤤",
+                      "lineHeight": 1.6,
+                      "fontFamily": "Inter",
+                      "fontSize": 16,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "oVkty",
+                  "name": "Endfield Section",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 24,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "W7KKV",
+                      "name": "enfieldHeading",
+                      "fill": "#7DD3FC",
+                      "content": "アークナイツ：エンドフィールド",
+                      "fontFamily": "Inter",
+                      "fontSize": 24,
+                      "fontWeight": "semibold"
+                    },
+                    {
+                      "type": "rectangle",
+                      "cornerRadius": 8,
+                      "id": "K3lWE",
+                      "name": "Endfield Image",
+                      "fill": "#334155",
+                      "width": "fill_container",
+                      "height": 400
+                    },
+                    {
+                      "type": "text",
+                      "id": "ysSs7",
+                      "name": "enfieldText",
+                      "fill": "#E2E8F0",
+                      "content": "ひとまず事前登録からぼちぼちやってる管理人。\nストーリーは大衆向けになってるのであんまり刺さってないけど、思ったより本家とのクロスオーバー多くて戸惑ってる。",
+                      "lineHeight": 1.6,
+                      "fontFamily": "Inter",
+                      "fontSize": 16,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "VSK2b",
+                  "name": "FGO Section",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 24,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "ZndYw",
+                      "name": "fgoHeading",
+                      "fill": "#7DD3FC",
+                      "content": "Fate/Grand Order",
+                      "fontFamily": "Inter",
+                      "fontSize": 24,
+                      "fontWeight": "semibold"
+                    },
+                    {
+                      "type": "rectangle",
+                      "cornerRadius": 8,
+                      "id": "V7Rdz",
+                      "name": "FGO Image",
+                      "fill": "#334155",
+                      "width": "fill_container",
+                      "height": 400
+                    },
+                    {
+                      "type": "text",
+                      "id": "dNyr8",
+                      "name": "fgoText",
+                      "fill": "#E2E8F0",
+                      "content": "事前登録からやっていたような、そうでもないようなマスター。何度か離れてたこともある。\nメインストーリーが好きだけど、2部が終わって（？）燃え尽きた感。\nガチャは性能見てスルーしがち。★5含め育ててないサーヴァントも多め。",
+                      "lineHeight": 1.6,
+                      "fontFamily": "Inter",
+                      "fontSize": 16,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "TtBBX",
+                  "name": "Murder Mystery Section",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 24,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "ROCLg",
+                      "name": "mmHeading",
+                      "fill": "#7DD3FC",
+                      "content": "マーダーミステリー",
+                      "fontFamily": "Inter",
+                      "fontSize": 24,
+                      "fontWeight": "semibold"
+                    },
+                    {
+                      "type": "text",
+                      "id": "LP182",
+                      "name": "mmText",
+                      "fill": "#E2E8F0",
+                      "content": "2022年くらいから。プレイヤーは200回超、ゲームマスターは100回くらい。\n最初の1年くらいは鬼のようにやってたけど、最近は程々。\nロールプレイ、推理が好き。デスゲーム系はNot for me",
+                      "lineHeight": 1.6,
+                      "fontFamily": "Inter",
+                      "fontSize": 16,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "qopLL",
+                      "name": "ScrollableList 1",
+                      "width": "fill_container",
+                      "fill": "#1E293B",
+                      "cornerRadius": 8,
+                      "layout": "vertical",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "pnbwM",
+                          "name": "mmList1Title",
+                          "fill": "#E2E8F0",
+                          "content": "GMできるシナリオ",
+                          "fontFamily": "Inter",
+                          "fontSize": 16,
+                          "fontWeight": "medium"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "fZTRn",
+                          "name": "List Content",
+                          "width": "fill_container",
+                          "height": 180,
+                          "layout": "vertical",
+                          "gap": 8,
+                          "padding": [
+                            16,
+                            24
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "pkz6c",
+                              "name": "mmList1Item1",
+                              "fill": "#E2E8F0",
+                              "content": "• 雨の世界に太陽を",
+                              "fontFamily": "Inter",
+                              "fontSize": 16,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "EMGJC",
+                              "name": "mmList1Item2",
+                              "fill": "#E2E8F0",
+                              "content": "• 憐れな百合はSを捧げる（2人用）",
+                              "fontFamily": "Inter",
+                              "fontSize": 16,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "jq7sB",
+                              "name": "mmList1Item3",
+                              "fill": "#E2E8F0",
+                              "content": "• 忌み名は鬼録に二度登る",
+                              "fontFamily": "Inter",
+                              "fontSize": 16,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "WtoJ3",
+                              "name": "mmList1Item4",
+                              "fill": "#E2E8F0",
+                              "content": "• IL PENTITO",
+                              "fontFamily": "Inter",
+                              "fontSize": 16,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "N0Q79",
+                              "name": "mmList1Item5",
+                              "fill": "#E2E8F0",
+                              "content": "• ウルイの血族",
+                              "fontFamily": "Inter",
+                              "fontSize": 16,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "Bouu9",
+                              "name": "mmList1Item6",
+                              "fill": "#94A3B8",
+                              "content": "...他多数",
+                              "fontFamily": "Inter",
+                              "fontSize": 16,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "pwTnW",
+                      "name": "ScrollableList 2",
+                      "width": "fill_container",
+                      "fill": "#1E293B",
+                      "cornerRadius": 8,
+                      "layout": "vertical",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "SHtzt",
+                          "name": "mmList2Title",
+                          "fill": "#E2E8F0",
+                          "content": "GM準備する予定のシナリオ",
+                          "fontFamily": "Inter",
+                          "fontSize": 16,
+                          "fontWeight": "medium"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "72L6c",
+                          "name": "List Content",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 8,
+                          "padding": [
+                            16,
+                            24
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "MMGaD",
+                              "name": "mmList2Item1",
+                              "fill": "#E2E8F0",
+                              "content": "• ウィンター号の帰還者",
+                              "fontFamily": "Inter",
+                              "fontSize": 16,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "1avSE",
+                              "name": "mmList2Item2",
+                              "fill": "#E2E8F0",
+                              "content": "• 廻煌館殺人事件",
+                              "fontFamily": "Inter",
+                              "fontSize": 16,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "MktPw",
+                              "name": "mmList2Item3",
+                              "fill": "#E2E8F0",
+                              "content": "• キャラベラ・アタランテ殺人事件",
+                              "fontFamily": "Inter",
+                              "fontSize": 16,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "MlOaE",
+                              "name": "mmList2Item4",
+                              "fill": "#E2E8F0",
+                              "content": "• 三坂大学オカ研合宿殺人事件",
+                              "fontFamily": "Inter",
+                              "fontSize": 16,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "uatAL",
+                              "name": "mmList2Item5",
+                              "fill": "#E2E8F0",
+                              "content": "• 龍神様の祟り",
+                              "fontFamily": "Inter",
+                              "fontSize": 16,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "NOFfY",
+                  "name": "CoC Section",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 24,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "k5mKY",
+                      "name": "cocHeading",
+                      "fill": "#7DD3FC",
+                      "content": "クトゥルフ神話TRPG",
+                      "fontFamily": "Inter",
+                      "fontSize": 24,
+                      "fontWeight": "semibold"
+                    },
+                    {
+                      "type": "text",
+                      "id": "HL6w3",
+                      "name": "cocText",
+                      "fill": "#E2E8F0",
+                      "content": "2022年くらいから。プレイヤーは60回くらい、キーパーは10回くらい。\n6版、7版の基本ルールブックのみ所持。\nクラシックなシナリオが好き。タイマンはNot for me\nハウスルールはほぼないです。6版で戦闘中以外もCCBを使うくらい。",
+                      "lineHeight": 1.6,
+                      "fontFamily": "Inter",
+                      "fontSize": 16,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "88LwW",
+                      "name": "ScrollableList 1",
+                      "width": "fill_container",
+                      "fill": "#1E293B",
+                      "cornerRadius": 8,
+                      "layout": "vertical",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "S7xx7",
+                          "name": "cocList1Title",
+                          "fill": "#E2E8F0",
+                          "content": "KPできるシナリオ",
+                          "fontFamily": "Inter",
+                          "fontSize": 16,
+                          "fontWeight": "medium"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "XkQWG",
+                          "name": "List Content",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 8,
+                          "padding": [
+                            16,
+                            24
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "zcZNB",
+                              "name": "cocList1Item1",
+                              "fill": "#E2E8F0",
+                              "content": "• ANOMALIA",
+                              "fontFamily": "Inter",
+                              "fontSize": 16,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "YaGKF",
+                              "name": "cocList1Item2",
+                              "fill": "#E2E8F0",
+                              "content": "• 狂気山脈 ～邪神の山嶺～",
+                              "fontFamily": "Inter",
+                              "fontSize": 16,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "V7QD1",
+                              "name": "cocList1Item3",
+                              "fill": "#E2E8F0",
+                              "content": "• コーヒー一杯分の恐怖",
+                              "fontFamily": "Inter",
+                              "fontSize": 16,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "k0hDH",
+                              "name": "cocList1Item4",
+                              "fill": "#E2E8F0",
+                              "content": "• 新世界より",
+                              "fontFamily": "Inter",
+                              "fontSize": 16,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "pQQ36",
+                      "name": "ScrollableList 2",
+                      "width": "fill_container",
+                      "fill": "#1E293B",
+                      "cornerRadius": 8,
+                      "layout": "vertical",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "BMS5E",
+                          "name": "cocList2Title",
+                          "fill": "#E2E8F0",
+                          "content": "KP準備する予定のシナリオ",
+                          "fontFamily": "Inter",
+                          "fontSize": 16,
+                          "fontWeight": "medium"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "V925v",
+                          "name": "List Content",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 8,
+                          "padding": [
+                            16,
+                            24
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "2dA4H",
+                              "name": "cocList2Item1",
+                              "fill": "#E2E8F0",
+                              "content": "• αの謳うメメント・モリ",
+                              "fontFamily": "Inter",
+                              "fontSize": 16,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "0WNw7",
+                              "name": "cocList2Item2",
+                              "fill": "#E2E8F0",
+                              "content": "• 井藤チアキと云ふ女",
+                              "fontFamily": "Inter",
+                              "fontSize": 16,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "z5VAu",
+                              "name": "cocList2Item3",
+                              "fill": "#E2E8F0",
+                              "content": "• ウィルマゼア急行の一番長い運行記録",
+                              "fontFamily": "Inter",
+                              "fontSize": 16,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "1E6xB",
+                              "name": "cocList2Item4",
+                              "fill": "#E2E8F0",
+                              "content": "• ドルペガ",
+                              "fontFamily": "Inter",
+                              "fontSize": 16,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "RkLs8",
+                              "name": "cocList2Item5",
+                              "fill": "#E2E8F0",
+                              "content": "• 魔法少女は死を唄え",
+                              "fontFamily": "Inter",
+                              "fontSize": 16,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "dr0qh",
+                  "name": "Emoklore Section",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 24,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "Gsrvd",
+                      "name": "emoHeading",
+                      "fill": "#7DD3FC",
+                      "content": "エモクロアTRPG",
+                      "fontFamily": "Inter",
+                      "fontSize": 24,
+                      "fontWeight": "semibold"
+                    },
+                    {
+                      "type": "text",
+                      "id": "Roh20",
+                      "name": "emoText",
+                      "fill": "#E2E8F0",
+                      "content": "2023年くらいから。プレイヤーは10回くらい、ディーラーは10回くらい。\n手軽でダイスたくさん振れるのが好き。",
+                      "lineHeight": 1.6,
+                      "fontFamily": "Inter",
+                      "fontSize": 16,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "4FX51",
+                      "name": "ScrollableList 1",
+                      "width": "fill_container",
+                      "fill": "#1E293B",
+                      "cornerRadius": 8,
+                      "layout": "vertical",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "d9x0O",
+                          "name": "emoList1Title",
+                          "fill": "#E2E8F0",
+                          "content": "DLできるシナリオ",
+                          "fontFamily": "Inter",
+                          "fontSize": 16,
+                          "fontWeight": "medium"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "NrB54",
+                          "name": "List Content",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 8,
+                          "padding": [
+                            16,
+                            24
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "Tem0C",
+                              "name": "emoList1Item1",
+                              "fill": "#E2E8F0",
+                              "content": "• アルカ・サンクタ（オリジナル）",
+                              "fontFamily": "Inter",
+                              "fontSize": 16,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "MV7y6",
+                              "name": "emoList1Item2",
+                              "fill": "#E2E8F0",
+                              "content": "• ウルトラヒロイック",
+                              "fontFamily": "Inter",
+                              "fontSize": 16,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "C8qSV",
+                              "name": "emoList1Item3",
+                              "fill": "#E2E8F0",
+                              "content": "• ウルトラヒロイック2",
+                              "fontFamily": "Inter",
+                              "fontSize": 16,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "ih4GU",
+                              "name": "emoList1Item4",
+                              "fill": "#E2E8F0",
+                              "content": "• オリカミ",
+                              "fontFamily": "Inter",
+                              "fontSize": 16,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "nfDEm",
+                              "name": "emoList1Item5",
+                              "fill": "#E2E8F0",
+                              "content": "• 新約・八尺さま",
+                              "fontFamily": "Inter",
+                              "fontSize": 16,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "1KKIN",
+                              "name": "emoList1Item6",
+                              "fill": "#E2E8F0",
+                              "content": "• マジックブルーの境界線",
+                              "fontFamily": "Inter",
+                              "fontSize": 16,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "1LI8F",
+                      "name": "emoSubheading",
+                      "fill": "#7DD3FC",
+                      "content": "アークナイツ拡張ルール",
+                      "fontFamily": "Inter",
+                      "fontSize": 20,
+                      "fontWeight": "semibold"
+                    },
+                    {
+                      "type": "text",
+                      "id": "C8aom",
+                      "name": "emoSubtext",
+                      "fill": "#E2E8F0",
+                      "content": "エモクロアTRPGでアークナイツを遊べる非公式の追加ルールを作りました→サイド・オリパシー",
+                      "lineHeight": 1.6,
+                      "fontFamily": "Inter",
+                      "fontSize": 16,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "tGn0i",
+                      "name": "ScrollableList 2",
+                      "width": "fill_container",
+                      "fill": "#1E293B",
+                      "cornerRadius": 8,
+                      "layout": "vertical",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "BO29I",
+                          "name": "emoList2Title",
+                          "fill": "#E2E8F0",
+                          "content": "DL準備する予定のシナリオ",
+                          "fontFamily": "Inter",
+                          "fontSize": 16,
+                          "fontWeight": "medium"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "izMj5",
+                          "name": "List Content",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 8,
+                          "padding": [
+                            16,
+                            24
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "cZbXM",
+                              "name": "emoList2Item1",
+                              "fill": "#E2E8F0",
+                              "content": "• 統合戦略I 緋き舞台の幕間劇（製作中）",
+                              "fontFamily": "Inter",
+                              "fontSize": 16,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "AIKOs",
+                              "name": "emoList2Item2",
+                              "fill": "#E2E8F0",
+                              "content": "• ドクター救出作戦（製作中）",
+                              "fontFamily": "Inter",
+                              "fontSize": 16,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "MB5hC",
+                              "name": "emoList2Item3",
+                              "fill": "#E2E8F0",
+                              "content": "• 無明に射すもの（製作中）",
+                              "fontFamily": "Inter",
+                              "fontSize": 16,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "HLfcn",
+                  "name": "Other Games Section",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 24,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "xAc6a",
+                      "name": "otherHeading",
+                      "fill": "#7DD3FC",
+                      "content": "その他アナログゲーム",
+                      "fontFamily": "Inter",
+                      "fontSize": 24,
+                      "fontWeight": "semibold"
+                    },
+                    {
+                      "type": "text",
+                      "id": "ABjqD",
+                      "name": "otherSubheading",
+                      "fill": "#7DD3FC",
+                      "content": "謎解き",
+                      "fontFamily": "Inter",
+                      "fontSize": 20,
+                      "fontWeight": "semibold"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "o7W1q",
+                      "name": "ScrollableList",
+                      "width": "fill_container",
+                      "fill": "#1E293B",
+                      "cornerRadius": 8,
+                      "layout": "vertical",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "UZWwn",
+                          "name": "otherListTitle",
+                          "fill": "#E2E8F0",
+                          "content": "GMできるゲーム",
+                          "fontFamily": "Inter",
+                          "fontSize": 16,
+                          "fontWeight": "medium"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "yVhYo",
+                          "name": "List Content",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 8,
+                          "padding": [
+                            16,
+                            24
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "eSZWd",
+                              "name": "otherListItem1",
+                              "fill": "#E2E8F0",
+                              "content": "• 宇宙船からの脱出",
+                              "fontFamily": "Inter",
+                              "fontSize": 16,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "lsCDe",
+                              "name": "otherListItem2",
+                              "fill": "#E2E8F0",
+                              "content": "• 風雲弥生城",
+                              "fontFamily": "Inter",
+                              "fontSize": 16,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "J22xc",
+          "name": "Footer",
+          "width": "fill_container",
+          "fill": "#1E293B",
+          "layout": "vertical",
+          "padding": [
+            32,
+            24
+          ],
+          "children": [
+            {
+              "type": "text",
+              "id": "aDxRC",
+              "name": "footerText",
+              "fill": "#94A3B8",
+              "content": "© 2026 bidri. All rights reserved.",
+              "fontFamily": "Inter",
+              "fontSize": 14,
+              "fontWeight": "normal"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
