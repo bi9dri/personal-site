@@ -7,7 +7,7 @@ bidriの個人サイト。Astro + Tailwind CSSで構築された静的サイト�
 ## Tech Stack
 
 - **Framework**: Astro v5
-- **Styling**: Tailwind CSS v3
+- **Styling**: Tailwind CSS v4 (CSS-first configuration)
 - **Package Manager**: Bun
 - **Hosting**: GitHub Pages (bidri.dev)
 
@@ -22,6 +22,8 @@ personal-site/
 │   │   └── ScrollableList.astro  # スクロール可能リスト
 │   ├── layouts/
 │   │   └── BaseLayout.astro      # 共通レイアウト
+│   ├── styles/
+│   │   └── global.css         # Tailwind v4設定（@theme）
 │   ├── pages/             # ルーティング
 │   │   ├── index.astro           # トップページ
 │   │   └── profile.astro         # プロフィールページ
@@ -32,7 +34,6 @@ personal-site/
 ├── .github/workflows/     # CI/CD
 │   └── deploy.yml         # GitHub Pagesデプロイ
 ├── astro.config.mjs       # Astro設定
-├── tailwind.config.mjs    # Tailwind設定
 └── package.json
 ```
 
@@ -96,6 +97,16 @@ xl: 3rem (48px)
 - 1024px: サイドバーが横並びレイアウトに変更
 - 768px: ヘッダーが縦並びに、フォントサイズ縮小
 - 480px: さらにコンパクトなレイアウト
+
+## Tailwind CSS Configuration
+
+Tailwind CSS v4使用。CSS-first設定で`src/styles/global.css`の`@theme`ブロックで管理。
+
+- カスタムカラー、スペーシング、フォントは`@theme`で定義
+- `@tailwindcss/vite` Viteプラグインを使用
+- `tailwind.config.mjs`は不要（削除済み）
+
+パッケージ追加時は固定バージョン指定を推奨（例: `bun add package@1.2.3`）
 
 ## Configuration
 

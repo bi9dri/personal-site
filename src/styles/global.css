@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+@theme {
+  /* カラー */
+  --color-primary: #38BDF8;
+  --color-primary-dark: #7DD3FC;
+  --color-primary-light: #0EA5E9;
+  --color-background: #0F172A;
+  --color-surface: #1E293B;
+  --color-surface-elevated: #334155;
+  --color-text: #E2E8F0;
+  --color-text-muted: #94A3B8;
+  --color-border: #334155;
+
+  /* スペーシング */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  --spacing-2xl: 4rem;
+
+  /* 幅 */
+  --width-sidebar: 240px;
+  --max-width-container: 1200px;
+
+  /* Border Radius */
+  --radius: 8px;
+
+  /* フォントファミリー */
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans JP", sans-serif;
+}
