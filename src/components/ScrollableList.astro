@@ -4,7 +4,7 @@ interface Props {
   title?: string;
 }
 
-const { items, title } = Astro.props;
+const { items, title } = Astro.props as Props;
 ---
 
 <div class="scrollable-list-container bg-surface border border-border rounded mb-md">
