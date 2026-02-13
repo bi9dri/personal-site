@@ -5,7 +5,7 @@ interface Props {
   message: string;
 }
 
-const { icon, name, message } = Astro.props;
+const { icon, name, message } = Astro.props as Props;
 ---
 
 <div class="flex flex-row max-lg:flex-col items-center lg:gap-lg mb-xl p-lg max-lg:p-md rounded">
@@ -13,12 +13,12 @@ const { icon, name, message } = Astro.props;
     <img
       src={icon}
       alt={name}
-      class="w-[120px] h-[120px] md:w-[100px] md:h-[100px] max-[480px]:w-[80px] max-[480px]:h-[80px] rounded-full !shadow-none m-0"
+      class="w-30 h-30 md:w-25 md:h-25 max-[480px]:w-20 max-[480px]:h-20 rounded-full shadow-none! m-0"
     />
   </div>
-  <div class="relative bg-surface-elevated p-md rounded shadow-lg max-w-[300px] max-lg:max-w-none max-lg:w-full text-[0.95rem] text-text flex-1">
-    <div class="absolute top-1/2 -left-2 -translate-y-1/2 w-0 h-0 border-t-[10px] border-t-transparent border-b-[10px] border-b-transparent border-r-[10px] border-r-surface-elevated max-lg:hidden"></div>
-    <div class="absolute -top-2 left-1/2 -translate-x-1/2 w-0 h-0 border-l-[10px] border-l-transparent border-r-[10px] border-r-transparent border-b-[10px] border-b-surface-elevated hidden max-lg:block"></div>
+  <div class="relative bg-surface-elevated p-md rounded shadow-lg max-w-75 max-lg:max-w-none max-lg:w-full text-[0.95rem] text-text flex-1">
+    <div class="absolute top-1/2 -left-2 -translate-y-1/2 w-0 h-0 border-t-10 border-t-transparent border-b-10 border-b-transparent border-r-10 border-r-surface-elevated max-lg:hidden"></div>
+    <div class="absolute -top-2 left-1/2 -translate-x-1/2 w-0 h-0 border-l-10 border-l-transparent border-r-10 border-r-transparent border-b-10 border-b-surface-elevated hidden max-lg:block"></div>
     {message}
   </div>
 </div>
