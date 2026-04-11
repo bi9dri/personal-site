@@ -13,7 +13,7 @@ const { icon, name, message } = Astro.props as Props;
     src={icon}
     alt={name}
     class="w-36 h-36 max-[480px]:w-24 max-[480px]:h-24 rounded-full m-0 mb-md"
-    style="outline: 2px solid rgba(56,189,248,0.25); outline-offset: 4px;"
+    style="box-shadow: 0 0 0 3px #0F172A, 0 0 0 5px rgba(56,189,248,0.25);"
   />
   <p class="text-text-muted text-[0.95rem] mt-xs m-0">{message}</p>
 </div>

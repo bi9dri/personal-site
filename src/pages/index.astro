@@ -26,28 +26,30 @@ const headings = [
 
   <h2 id="links">外部リンク</h2>
 
-  <div class="link-grid">
-    <a href="https://bsky.app/profile/bidri.bsky.social" target="_blank" rel="noopener noreferrer" class="link-card">
-      <Icon name="simple-icons:bluesky" size="18" /> Bluesky
-    </a>
-    <a href="https://x.com/bidri__" target="_blank" rel="noopener noreferrer" class="link-card">
-      <Icon name="simple-icons:x" size="18" /> X
-    </a>
-    <a href="https://misskey.io/@bidri" target="_blank" rel="noopener noreferrer" class="link-card">
-      <Icon name="simple-icons:misskey" size="18" /> Misskey.io
-    </a>
-    <a href="https://side-oripathy.bidri.dev/" target="_blank" rel="noopener noreferrer" class="link-card">
-      <Icon name="heroicons-outline:external-link" size="18" /> サイド・オリパシー
-    </a>
-    <a href="https://www.notion.so/d88975d51a794b7f82bc5ceb3615e923?v=e72bdc57ee984301b99c015fac78f4d3&source=copy_link" target="_blank" rel="noopener noreferrer" class="link-card">
-      <Icon name="heroicons-outline:calendar" size="18" /> 予定カレンダー
-    </a>
-  </div>
+  <ul class="mt-8 flex flex-wrap gap-6">
+    <li><a href="https://bsky.app/profile/bidri.bsky.social" target="_blank" rel="noopener noreferrer"
+        ><Icon name="simple-icons:bluesky" size="24" title="Bluesky" /></a></li>
+    <li><a href="https://x.com/bidri__" target="_blank" rel="noopener noreferrer"
+        ><Icon name="simple-icons:x" size="24" title="X" /></a></li>
+    <li><a href="https://misskey.io/@bidri" target="_blank" rel="noopener noreferrer"
+        ><Icon name="simple-icons:misskey" size="24" title="Misskey.io" /></a></li>
+  </ul>
+
+  <ul>
+    <li>
+      <a href="https://side-oripathy.bidri.dev/" target="_blank" rel="noopener noreferrer"
+        >サイド・オリパシー<Icon name="heroicons-outline:external-link" class="inline" /></a> - エモクロアTRPGでアークナイツを遊べる非公式の追加ルール
+    </li>
+    <li>
+      <a href="https://www.notion.so/d88975d51a794b7f82bc5ceb3615e923?v=e72bdc57ee984301b99c015fac78f4d3&source=copy_link" target="_blank" rel="noopener noreferrer"
+        >予定カレンダー (Notion)<Icon name="heroicons-outline:external-link" class="inline" /></a>
+    </li>
+  </ul>
 
   <div class="game-card">
-    <img src="/assets/arknights.webp" alt="arknights" />
     <div class="game-card-body">
       <h2 id="arknights">アークナイツ</h2>
+      <img src="/assets/arknights.webp" alt="arknights" />
       <p>事前登録から（たぶん）毎日遊んでるドクター。<br />
         ストーリー、世界観が大好き。<br />
         全オペレーター雇用済み、昇進済み。勲章全て取得済み。<br />
@@ -57,9 +59,9 @@ const headings = [
   </div>
 
   <div class="game-card">
-    <img src="/assets/endfield.webp" alt="endfield" />
     <div class="game-card-body">
       <h2 id="endfield">アークナイツ：エンドフィールド</h2>
+      <img src="/assets/endfield.webp" alt="endfield" />
       <p>ひとまず事前登録からぼちぼちやってる管理人。<br />
         ストーリーは大衆向けになっててあんまり刺さってないけど、思ったより本家とのクロスオーバー多くて戸惑ってる。<br />
         Satisfactoryとか工業ゲーム好きなので、そういう意味では刺さってる。</p>
@@ -67,9 +69,9 @@ const headings = [
   </div>
 
   <div class="game-card">
-    <img src="/assets/fgo.webp" alt="fgo" />
     <div class="game-card-body">
       <h2 id="fgo">Fate/Grand Order</h2>
+      <img src="/assets/fgo.webp" alt="fgo" />
       <p>事前登録からやっていたような、そうでもないようなマスター。何度か離れてたこともある。<br />
         メインストーリーが好きだけど、2部が終わって（？）燃え尽きた感。<br />
         ガチャは性能見てスルーしがち。★5含め育ててないサーヴァントも多め。</p>
