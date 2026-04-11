@@ -14,7 +14,6 @@ const headings = [
   { id: 'coc', text: 'クトゥルフ神話TRPG' },
   { id: 'emoklore', text: 'エモクロアTRPG' },
   { id: 'other-games', text: 'その他アナログゲーム' },
-
 ];
 ---
 
@@ -27,170 +26,179 @@ const headings = [
 
   <h2 id="links">外部リンク</h2>
 
-  <ul class="mt-8 flex flex-wrap gap-6">
-    <li><a href="https://bsky.app/profile/bidri.bsky.social" target="_blank" rel="noopener noreferrer"
-        ><Icon name="simple-icons:bluesky" size="24" title="Bluesky" /></a></li>
-    <li><a href="https://x.com/bidri__" target="_blank" rel="noopener noreferrer"
-        ><Icon name="simple-icons:x" size="24" title="X" /></a></li>
-    <li><a href="https://misskey.io/@bidri" target="_blank" rel="noopener noreferrer"
-        ><Icon name="simple-icons:misskey" size="24" title="Misskey.io" /></a></li>
-  </ul>
+  <div class="link-grid">
+    <a href="https://bsky.app/profile/bidri.bsky.social" target="_blank" rel="noopener noreferrer" class="link-card">
+      <Icon name="simple-icons:bluesky" size="18" /> Bluesky
+    </a>
+    <a href="https://x.com/bidri__" target="_blank" rel="noopener noreferrer" class="link-card">
+      <Icon name="simple-icons:x" size="18" /> X
+    </a>
+    <a href="https://misskey.io/@bidri" target="_blank" rel="noopener noreferrer" class="link-card">
+      <Icon name="simple-icons:misskey" size="18" /> Misskey.io
+    </a>
+    <a href="https://side-oripathy.bidri.dev/" target="_blank" rel="noopener noreferrer" class="link-card">
+      <Icon name="heroicons-outline:external-link" size="18" /> サイド・オリパシー
+    </a>
+    <a href="https://www.notion.so/d88975d51a794b7f82bc5ceb3615e923?v=e72bdc57ee984301b99c015fac78f4d3&source=copy_link" target="_blank" rel="noopener noreferrer" class="link-card">
+      <Icon name="heroicons-outline:calendar" size="18" /> 予定カレンダー
+    </a>
+  </div>
 
-  <ul>
-    <li>
-      <a
-        href="https://side-oripathy.bidri.dev/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >サイド・オリパシー<Icon name="heroicons-outline:external-link" class="inline" /></a> - エモクロアTRPGでアークナイツを遊べる非公式の追加ルール
-    </li>
-    <li>
-      <a
-        href="https://www.notion.so/d88975d51a794b7f82bc5ceb3615e923?v=e72bdc57ee984301b99c015fac78f4d3&source=copy_link"
-        target="_blank"
-        rel="noopener noreferrer"
-      >予定カレンダー (Notion)<Icon name="heroicons-outline:external-link" class="inline" /></a>
-    </li>
-  </ul>
+  <div class="game-card">
+    <img src="/assets/arknights.webp" alt="arknights" />
+    <div class="game-card-body">
+      <h2 id="arknights">アークナイツ</h2>
+      <p>事前登録から（たぶん）毎日遊んでるドクター。<br />
+        ストーリー、世界観が大好き。<br />
+        全オペレーター雇用済み、昇進済み。勲章全て取得済み。<br />
+        特化は全部やろうかなーと思い立ってコツコツ進めてるところ。<br />
+        モジュールデータもっとください🤤</p>
+    </div>
+  </div>
 
-  <h2 id="arknights">アークナイツ</h2>
+  <div class="game-card">
+    <img src="/assets/endfield.webp" alt="endfield" />
+    <div class="game-card-body">
+      <h2 id="endfield">アークナイツ：エンドフィールド</h2>
+      <p>ひとまず事前登録からぼちぼちやってる管理人。<br />
+        ストーリーは大衆向けになっててあんまり刺さってないけど、思ったより本家とのクロスオーバー多くて戸惑ってる。<br />
+        Satisfactoryとか工業ゲーム好きなので、そういう意味では刺さってる。</p>
+    </div>
+  </div>
 
-  <img src="/assets/arknights.webp" alt="arknights" />
+  <div class="game-card">
+    <img src="/assets/fgo.webp" alt="fgo" />
+    <div class="game-card-body">
+      <h2 id="fgo">Fate/Grand Order</h2>
+      <p>事前登録からやっていたような、そうでもないようなマスター。何度か離れてたこともある。<br />
+        メインストーリーが好きだけど、2部が終わって（？）燃え尽きた感。<br />
+        ガチャは性能見てスルーしがち。★5含め育ててないサーヴァントも多め。</p>
+    </div>
+  </div>
 
-  <p>事前登録から（たぶん）毎日遊んでるドクター。<br />
-    ストーリー、世界観が大好き。<br />
-    全オペレーター雇用済み、昇進済み。勲章全て取得済み。<br />
-    特化は全部やろうかなーと思い立ってコツコツ進めてるところ。<br />
-    モジュールデータもっとください🤤</p>
-  
-  <h2 id="endfield">アークナイツ：エンドフィールド</h2>
+  <div class="game-card">
+    <div class="game-card-body">
+      <h2 id="murder-mystery">マーダーミステリー</h2>
+      <p>2022年くらいから。プレイヤーは200回超、ゲームマスターは100回くらい。<br />
+        最初の1年くらいは鬼のようにやってたけど、最近は程々。<br />
+        ロールプレイ、推理が好き。デスゲーム系はNot for me</p>
 
-  <img src="/assets/endfield.webp" alt="endfield" />
+      <ScrollableList
+        title="GMできるシナリオ"
+        items={[
+          '雨の世界に太陽を',
+          '憐れな百合はSを捧げる（2人用）',
+          '忌み名は鬼録に二度登る',
+          'IL PENTITO',
+          'ウルイの血族',
+          'エイダ',
+          'エドワーズ伯爵家の使用人～5人の憂鬱な使用人～',
+          '皆既月食～but not Lunar Eclipse～',
+          '怪盗エイプリルと七人の探偵たち',
+          '肩幅お嬢様殺人事件',
+          '記憶回復センターへようこそ！',
+          '奇巌渓の殺人',
+          '狂気山脈 陰謀の分水嶺／星ふる天辺／薄明三角点',
+          'J・モリアーティの暗躍',
+          'たしかにヒロインを虐めてましたがヒロインを殺したのはわたくしではなくってよ！',
+          '探偵時切灰斗氏の事件録 Episode 00:着飾った令嬢',
+          'くちなしのきみへ',
+          '少女はSに溺れる',
+          '南極地点X',
+          'バード将軍の死 改訂版',
+          'ブルーホールミステリー～夜明けのまちと「奇跡のブルー」～',
+          'マキシマムDEBU100',
+          'ゆっくりと苦しみをもって',
+          '夜の蛙は眠らない',
+        ]}
+      />
 
-  <p>ひとまず事前登録からぼちぼちやってる管理人。<br />
-    ストーリーは大衆向けになっててあんまり刺さってないけど、思ったより本家とのクロスオーバー多くて戸惑ってる。<br />
-    Satisfactoryとか工業ゲーム好きなので、そういう意味では刺さってる。</p>
+      <ScrollableList
+        title="GM準備する予定のシナリオ"
+        items={[
+          'ウィンター号の帰還者',
+          '廻煌館殺人事件',
+          'キャラベラ・アタランテ殺人事件',
+          '三坂大学オカ研合宿殺人事件',
+          '龍神様の祟り',
+        ]}
+      />
+    </div>
+  </div>
 
-  <h2 id="fgo">Fate/Grand Order</h2>
+  <div class="game-card">
+    <div class="game-card-body">
+      <h2 id="coc">クトゥルフ神話TRPG</h2>
+      <p>2022年くらいから。プレイヤーは60回くらい、キーパーは10回くらい。<br />
+        6版、7版の基本ルールブックのみ所持。<br />
+        クラシックなシナリオが好き。タイマンはNot for me<br />
+        ハウスルールはほぼないです。6版で戦闘中以外もCCBを使うくらい。</p>
 
-  <img src="/assets/fgo.webp" alt="fgo" />
+      <ScrollableList
+        title="KPできるシナリオ"
+        items={[
+          'ANOMALIA',
+          '狂気山脈 ～邪神の山嶺～',
+          'コーヒー一杯分の恐怖',
+          '新世界より',
+        ]}
+      />
 
-  <p>事前登録からやっていたような、そうでもないようなマスター。何度か離れてたこともある。<br />
-    メインストーリーが好きだけど、2部が終わって（？）燃え尽きた感。<br />
-    ガチャは性能見てスルーしがち。★5含め育ててないサーヴァントも多め。</p>
+      <ScrollableList
+        title="KP準備する予定のシナリオ"
+        items={[
+          'αの謳うメメント・モリ',
+          '井藤チアキと云ふ女',
+          'ウィルマゼア急行の一番長い運行記録',
+          'ドルペガ',
+          '魔法少女は死を唄え',
+        ]}
+      />
+    </div>
+  </div>
 
-  <h2 id="murder-mystery">マーダーミステリー</h2>
+  <div class="game-card">
+    <div class="game-card-body">
+      <h2 id="emoklore">エモクロアTRPG</h2>
+      <p>2023年くらいから。プレイヤーは10回くらい、ディーラーは10回くらい。<br />
+        手軽でダイスたくさん振れるのが好き。</p>
 
-  <p>2022年くらいから。プレイヤーは200回超、ゲームマスターは100回くらい。<br />
-    最初の1年くらいは鬼のようにやってたけど、最近は程々。<br />
-    ロールプレイ、推理が好き。デスゲーム系はNot for me</p>
+      <ScrollableList
+        title="DLできるシナリオ"
+        items={[
+          'アルカ・サンクタ（オリジナル）',
+          'ウルトラヒロイック',
+          'ウルトラヒロイック2',
+          'オリカミ',
+          '新約・八尺さま',
+          'マジックブルーの境界線',
+        ]}
+      />
 
-  <ScrollableList
-    title="GMできるシナリオ"
-    items={[
-      '雨の世界に太陽を',
-      '憐れな百合はSを捧げる（2人用）',
-      '忌み名は鬼録に二度登る',
-      'IL PENTITO',
-      'ウルイの血族',
-      'エイダ',
-      'エドワーズ伯爵家の使用人～5人の憂鬱な使用人～',
-      '皆既月食～but not Lunar Eclipse～',
-      '怪盗エイプリルと七人の探偵たち',
-      '肩幅お嬢様殺人事件',
-      '記憶回復センターへようこそ！',
-      '奇巌渓の殺人',
-      '狂気山脈 陰謀の分水嶺／星ふる天辺／薄明三角点',
-      'J・モリアーティの暗躍',
-      'たしかにヒロインを虐めてましたがヒロインを殺したのはわたくしではなくってよ！',
-      '探偵時切灰斗氏の事件録 Episode 00:着飾った令嬢',
-      'くちなしのきみへ',
-      '少女はSに溺れる',
-      '南極地点X',
-      'バード将軍の死 改訂版',
-      'ブルーホールミステリー～夜明けのまちと「奇跡のブルー」～',
-      'マキシマムDEBU100',
-      'ゆっくりと苦しみをもって',
-      '夜の蛙は眠らない',
-    ]}
-  />
+      <h3>アークナイツ拡張ルール</h3>
 
-  <ScrollableList
-    title="GM準備する予定のシナリオ"
-    items={[
-      'ウィンター号の帰還者',
-      '廻煌館殺人事件',
-      'キャラベラ・アタランテ殺人事件',
-      '三坂大学オカ研合宿殺人事件',
-      '龍神様の祟り',
-    ]}
-  />
+      <p>エモクロアTRPGでアークナイツを遊べる非公式の追加ルールを作りました→<a
+          href="https://side-oripathy.bidri.dev/"
+          target="_blank"
+          rel="noopener noreferrer">サイド・オリパシー</a
+        ></p>
 
-  <h2 id="coc">クトゥルフ神話TRPG</h2>
+      <ScrollableList
+        title="DL準備する予定のシナリオ"
+        items={[
+          '統合戦略I 緋き舞台の幕間劇（製作中）',
+          'ドクター救出作戦（製作中）',
+          '無明に射すもの（製作中）',
+        ]}
+      />
+    </div>
+  </div>
 
-  <p>2022年くらいから。プレイヤーは60回くらい、キーパーは10回くらい。<br />
-    6版、7版の基本ルールブックのみ所持。<br />
-    クラシックなシナリオが好き。タイマンはNot for me<br />
-    ハウスルールはほぼないです。6版で戦闘中以外もCCBを使うくらい。</p>
-
-  <ScrollableList
-    title="KPできるシナリオ"
-    items={[
-      'ANOMALIA',
-      '狂気山脈 ～邪神の山嶺～',
-      'コーヒー一杯分の恐怖',
-      '新世界より',
-    ]}
-  />
-
-  <ScrollableList
-    title="KP準備する予定のシナリオ"
-    items={[
-      'αの謳うメメント・モリ',
-      '井藤チアキと云ふ女',
-      'ウィルマゼア急行の一番長い運行記録',
-      'ドルペガ',
-      '魔法少女は死を唄え',
-    ]}
-  />
-
-  <h2 id="emoklore">エモクロアTRPG</h2>
-
-  <p>2023年くらいから。プレイヤーは10回くらい、ディーラーは10回くらい。<br />
-    手軽でダイスたくさん振れるのが好き。</p>
-
-  <ScrollableList
-    title="DLできるシナリオ"
-    items={[
-      'アルカ・サンクタ（オリジナル）',
-      'ウルトラヒロイック',
-      'ウルトラヒロイック2',
-      'オリカミ',
-      '新約・八尺さま',
-      'マジックブルーの境界線',
-    ]}
-  />
-
-  <h3>アークナイツ拡張ルール</h3>
-
-  <p>エモクロアTRPGでアークナイツを遊べる非公式の追加ルールを作りました→<a
-      href="https://side-oripathy.bidri.dev/"
-      target="_blank"
-      rel="noopener noreferrer">サイド・オリパシー</a
-    ></p>
-
-  <ScrollableList
-    title="DL準備する予定のシナリオ"
-    items={[
-      '統合戦略I 緋き舞台の幕間劇（製作中）',
-      'ドクター救出作戦（製作中）',
-      '無明に射すもの（製作中）',
-    ]}
-  />
-
-  <h2 id="other-games">その他アナログゲーム</h2>
-
-  <h3>謎解き</h3>
-
-  <ScrollableList title="GMできるゲーム" items={['宇宙船からの脱出', '風雲弥生城']} />
+  <div class="game-card">
+    <div class="game-card-body">
+      <h2 id="other-games">その他アナログゲーム</h2>
+      <h3>謎解き</h3>
+      <ScrollableList title="GMできるゲーム" items={['宇宙船からの脱出', '風雲弥生城']} />
+    </div>
+  </div>
 </BaseLayout>
