@@ -9,8 +9,8 @@
       "echo 'Welcome to devbox!' > /dev/null"
     ],
     "scripts": {
-      "test": [
-        "echo \"Error: no test specified\" && exit 1"
+      "pinact": [
+        "pinact run --min-age 7"
       ]
     }
   }
