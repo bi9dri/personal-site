@@ -1,214 +1,472 @@
 ---
-import { Icon } from 'astro-icon/components';
+const currentYear = new Date().getFullYear();
 
-import BaseLayout from '../layouts/BaseLayout.astro';
-import ProfileHeader from '../components/ProfileHeader.astro';
-import ScrollableList from '../components/ScrollableList.astro';
-
-const headings = [
-  { id: 'links', text: '外部リンク' },
-  { id: 'arknights', text: 'アークナイツ' },
-  { id: 'endfield', text: 'アークナイツ：エンドフィールド'},
-  { id: 'fgo', text: 'Fate/Grand Order' },
-  { id: 'murder-mystery', text: 'マーダーミステリー' },
-  { id: 'coc', text: 'クトゥルフ神話TRPG' },
-  { id: 'emoklore', text: 'エモクロアTRPG' },
-  { id: 'other-games', text: 'その他アナログゲーム' },
+const murderMysteryScenarios = [
+  '雨の世界に太陽を',
+  '憐れな百合はSを捧げる',
+  '忌み名は鬼録に二度登る',
+  'IL PENTITO',
+  'ウルイの血族',
+  'エイダ',
+  'エドワーズ伯爵家の使用人',
+  '皆既月食 ～but not Lunar Eclipse～',
+  '怪盗エイプリルと七人の探偵たち',
+  '肩幅お嬢様殺人事件',
+  '記憶回復センターへようこそ！',
+  '奇巌渓の殺人',
+  '狂気山脈 陰謀の分水嶺／星ふる天辺／薄明三角点',
+  'J・モリアーティの暗躍',
+  'たしかにヒロインを虐めてましたがヒロインを殺したのはわたくしではなくってよ！',
+  '探偵時切灰斗氏の事件録 Ep00',
+  'くちなしのきみへ',
+  '少女はSに溺れる',
+  '南極地点X',
+  'バード将軍の死 改訂版',
+  'ブルーホールミステリー～夜明けのまちと「奇跡のブルー」～',
+  'マキシマムDEBU100',
+  'ゆっくりと苦しみをもって',
+  '夜の蛙は眠らない',
 ];
+
+const cocScenarios = [
+  'ANOMALIA',
+  '狂気山脈 邪神の山嶺',
+  'コーヒー一杯分の恐怖',
+  '新世界より',
+  '魔法少女は死を唄え',
+];
+
+const emocloreScenarios = [
+  'アルカ・サンクタ',
+  'ウルトラヒロイック',
+  'ウルトラヒロイック2',
+  'オリカミ',
+  '新約・八尺さま',
+  'マジックブルーの境界線',
+];
+
+const ga4Script = `<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TH1DBNP0G2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TH1DBNP0G2');
+</script>`;
 ---
 
-<BaseLayout title="bidri" headings={headings}>
-  <ProfileHeader
-    icon="/assets/icon.webp"
-    name="びどり"
-    message="不労所得で生きていきたい"
-  />
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="bidriの個人サイト - ゲーム、TRPG、マーダーミステリー" />
+<title>bidri — ゲームとTRPGの記録</title>
+<link rel="icon" type="image/webp" href="/assets/icon.webp" />
+<Fragment set:html={ga4Script} />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700;800;900&family=Cinzel:wght@500;700;900&family=Poppins:wght@600;700;800;900&family=Righteous&family=Shippori+Mincho:wght@600;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap" />
+<style is:global>
+  :root {
+    --bg: oklch(0.13 0.035 245);
+    --ink-100: oklch(0.93 0.02 235);
+    --ink-200: oklch(0.80 0.04 232);
+    --ink-300: oklch(0.62 0.05 230);
+    --line: color-mix(in oklch, white 9%, transparent);
+    --accent-cyan: oklch(0.82 0.13 205);
+    --accent-sky:  oklch(0.74 0.13 232);
+    --accent-blue: oklch(0.66 0.16 250);
+    --accent-iris: oklch(0.60 0.16 268);
+    --f-jp: "Zen Kaku Gothic New", "Hiragino Sans", sans-serif;
+    --f-en: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+    --f-mono: "JetBrains Mono", ui-monospace, monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: auto; }
+  body {
+    background-color: var(--bg); color: var(--ink-100); font-family: var(--f-jp);
+    -webkit-font-smoothing: antialiased; overflow-x: hidden;
+    background-image: radial-gradient(circle at 1px 1px, color-mix(in oklch, white 6%, transparent) 1px, transparent 0);
+    background-size: 30px 30px;
+    background-attachment: fixed;
+    transition: background-color 0.7s ease;
+  }
+  body::before {
+    content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+    background: radial-gradient(125% 85% at 50% 45%, transparent 52%, rgba(0,0,0,.4));
+  }
+  a { color: inherit; text-decoration: none; }
+  ::selection { background: color-mix(in oklch, var(--accent-cyan) 35%, transparent); color: #fff; }
+  ::-webkit-scrollbar { width: 10px; }
+  ::-webkit-scrollbar-thumb { background: color-mix(in oklch, var(--accent-sky) 35%, transparent); }
 
-  <h2 id="links">外部リンク</h2>
+  .glass {
+    background: color-mix(in oklch, white 6%, transparent);
+    border: 1px solid color-mix(in oklch, white 14%, transparent);
+    backdrop-filter: blur(20px) saturate(130%);
+    -webkit-backdrop-filter: blur(20px) saturate(130%);
+  }
 
-  <ul class="mt-8 flex flex-wrap gap-6">
-    <li><a href="https://bsky.app/profile/bidri.bsky.social" target="_blank" rel="noopener noreferrer"
-        ><Icon name="simple-icons:bluesky" size="24" title="Bluesky" /></a></li>
-    <li><a href="https://x.com/bidri__" target="_blank" rel="noopener noreferrer"
-        ><Icon name="simple-icons:x" size="24" title="X" /></a></li>
-    <li><a href="https://misskey.io/@bidri" target="_blank" rel="noopener noreferrer"
-        ><Icon name="simple-icons:misskey" size="24" title="Misskey.io" /></a></li>
-  </ul>
+  /* ---------- Nav ---------- */
+  .nav { position: sticky; top: 0; z-index: 40; padding: 14px 24px; }
+  .nav-inner { max-width: 980px; margin: 0 auto; display: flex; align-items: center; gap: 16px; padding: 10px 14px 10px 18px; border-radius: 999px; background: color-mix(in oklch, oklch(0.12 0.03 245) 68%, transparent); border-color: rgba(255,255,255,.12); }
+  .brand { display: flex; align-items: center; gap: 10px; }
+  .brand b { font-family: var(--f-en); font-weight: 700; font-size: 16px; color: #fff; letter-spacing: 0.02em; }
+  .brand-ava { width: 24px; height: 24px; border-radius: 50%; object-fit: cover; display: block; border: 1px solid color-mix(in oklch, white 18%, transparent); }
+  .brand .dev { font-family: var(--f-mono); font-size: 11px; color: var(--ink-300); }
+  .nav-links { display: flex; gap: 2px; margin-left: auto; }
+  .nav-links a { padding: 6px 12px; font-size: 13px; color: var(--ink-200); transition: color .2s; }
+  .nav-links a:hover { color: #fff; }
+  .nav-cta { padding: 7px 14px; font-size: 12px; font-family: var(--f-mono); letter-spacing: 0.06em; border-radius: 999px; border: 1px solid color-mix(in oklch, var(--accent-sky) 50%, transparent); color: var(--accent-sky); }
 
-  <ul>
-    <li>
-      <a href="https://side-oripathy.bidri.dev/" target="_blank" rel="noopener noreferrer"
-        >サイド・オリパシー<Icon name="heroicons-outline:external-link" class="inline" /></a> - エモクロアTRPGでアークナイツを遊べる非公式の追加ルール
-    </li>
-    <li>
-      <a href="https://www.notion.so/d88975d51a794b7f82bc5ceb3615e923?v=e72bdc57ee984301b99c015fac78f4d3&source=copy_link" target="_blank" rel="noopener noreferrer"
-        >予定カレンダー (Notion)<Icon name="heroicons-outline:external-link" class="inline" /></a>
-    </li>
-  </ul>
+  /* ---------- Stack ---------- */
+  .stack { max-width: 980px; margin: 0 auto; padding: 44px 24px 34px; display: flex; flex-direction: column; gap: 56px; }
+  .sec { scroll-margin-top: 88px; }
+  .site-foot { max-width: 980px; margin: 0 auto; padding: 20px 24px 72px; display: flex; justify-content: space-between; align-items: center; font-family: var(--f-mono); font-size: 11px; color: var(--ink-300); letter-spacing: 0.08em; }
 
-  <div class="game-card">
-    <div class="game-card-body">
-      <h2 id="arknights">アークナイツ</h2>
-      <img src="/assets/arknights.webp" alt="arknights" />
-      <p>事前登録から（たぶん）毎日遊んでるドクター。<br />
-        ストーリー、世界観が大好き。<br />
-        全オペレーター雇用済み、昇進済み。勲章全て取得済み。<br />
-        特化は全部やろうかなーと思い立ってコツコツ進めてるところ。<br />
-        モジュールデータもっとください🤤</p>
-    </div>
+  .card { position: relative; overflow: hidden; width: 100%; border-radius: 0;
+    box-shadow: 0 0 0 1px rgba(255,255,255,.05), 0 30px 55px -30px rgba(0,0,0,.72); }
+
+  /* ============ 01 SUPREMATISM · アークナイツ ============ */
+  .suprem { position: relative; min-height: 440px; background: #efece4; overflow: hidden; }
+  .suprem .s { position: absolute; }
+  .suprem .s-red { width: 158px; height: 116px; background: #e2231a; left: 56px; top: 44px; transform: rotate(-9deg); }
+  .suprem .s-yellow { width: 50px; height: 50px; background: #f2b705; left: 250px; top: 70px; transform: rotate(16deg); }
+  .suprem .s-bar { width: 300px; height: 26px; background: #111; left: 40px; top: 172px; transform: rotate(20deg); }
+  .suprem .s-circle { width: 70px; height: 70px; border-radius: 50%; background: #111; left: 300px; top: 150px; }
+  .suprem .s-line { width: 56px; height: 56px; background: #111; left: 372px; top: 44px; }
+  .suprem .s-pic { width: 700px; aspect-ratio: 1920 / 905; right: -150px; top: 84px; border: 5px solid #111; background-image: url("/assets/arknights.webp"); background-size: cover; background-position: left center; box-shadow: 10px 12px 0 rgba(17,17,17,.12); }
+  .suprem .s-title { position: absolute; left: 48px; bottom: 40px; z-index: 3; }
+  .suprem .s-title h3 { font-family: "Inter", sans-serif; font-weight: 900; font-size: 42px; color: #111; letter-spacing: -0.02em; }
+  .suprem .s-title .jp { font-family: "Zen Kaku Gothic New"; font-weight: 900; font-size: 22px; color: #111; margin-top: 2px; }
+  .suprem .s-title .en { font-family: "Zen Kaku Gothic New"; font-weight: 500; font-size: 13px; letter-spacing: 0.02em; color: #333; margin-top: 12px; max-width: 420px; line-height: 1.75; }
+
+  /* ============ 02 SWISS · エンドフィールド ============ */
+  .swiss { background: #ededea; color: #111; font-family: "Inter"; display: flex; flex-direction: column; }
+  .swiss .l { padding: 30px 34px 22px; }
+  .swiss .headrow { display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; }
+  .swiss h3 { font-weight: 900; font-size: 52px; line-height: 0.92; letter-spacing: -0.04em; }
+  .swiss .jp { font-weight: 700; font-size: 20px; margin-top: 4px; }
+  .swiss .lede { font-family: "Zen Kaku Gothic New"; font-weight: 500; font-size: 14px; color: #333; line-height: 1.85; margin-top: 16px; max-width: 660px; }
+  .swiss .pic { width: 100%; aspect-ratio: 16 / 9; background-image: url("/assets/endfield.webp"); background-size: cover; background-position: center; }
+
+  /* ============ 03 ART DECO · Fate/Grand Order ============ */
+  .deco { height: 540px; background: #0b1733; padding: 26px; }
+  .deco .frame { position: absolute; inset: 18px; border: 1px solid #c9a24b; }
+  .deco .frame::before, .deco .frame::after { content: ""; position: absolute; width: 22px; height: 22px; border: 1px solid #c9a24b; }
+  .deco .frame::before { top: 8px; left: 8px; border-right: none; border-bottom: none; }
+  .deco .frame::after { bottom: 8px; right: 8px; border-left: none; border-top: none; }
+  .deco .sun { position: absolute; top: 34px; left: 50%; transform: translateX(-50%); }
+  .deco .content { position: absolute; inset: 40px; display: flex; flex-direction: column; align-items: center; }
+  .deco h3 { font-family: "Cinzel", serif; font-weight: 700; font-size: 34px; color: #f3e6c4; letter-spacing: 0.14em; margin-top: 40px; text-align: center; }
+  .deco .divider { display: flex; align-items: center; gap: 10px; margin: 14px 0; color: #c9a24b; }
+  .deco .divider i { width: 60px; height: 1px; background: #c9a24b; }
+  .deco .caption { font-family: "Shippori Mincho", serif; font-size: 13px; color: #d9c79a; letter-spacing: 0.04em; line-height: 1.7; text-align: center; max-width: 460px; margin-bottom: 14px; }
+  .deco .pic { flex: 1; width: 100%; margin-top: 6px; background-image: url("/assets/fgo.webp"); background-size: 100% auto; background-repeat: no-repeat; background-position: center 73%; border: 1px solid #c9a24b; box-shadow: 0 0 0 4px #0b1733, 0 0 0 5px rgba(201,162,75,.4); }
+
+  /* ============ 04 PUNK · マーダーミステリー ============ */
+  .punk { min-height: 380px; background: #0d0d0d;
+    background-image: radial-gradient(rgba(255,255,255,.06) 1px, transparent 1px); background-size: 4px 4px; padding: 30px; }
+  .punk .rn { display: flex; flex-wrap: wrap; gap: 4px; }
+  .punk .rn span { font-weight: 900; font-size: 40px; line-height: 1; padding: 2px 8px; }
+  .punk .rn .b { background: #fff; color: #000; font-family: "Archivo Black"; }
+  .punk .rn .w { background: #000; color: #fff; border: 2px solid #fff; font-family: "Inter"; transform: rotate(-3deg); }
+  .punk .rn .r { background: #e2231a; color: #000; font-family: "Archivo Black"; transform: rotate(2deg); }
+  .punk .rn .i { background: #fff; color: #000; font-style: italic; font-family: "Inter"; }
+  .punk .sub { font-family: var(--f-mono); font-size: 12px; color: #fff; margin-top: 22px; border-top: 3px double #fff; padding-top: 12px; letter-spacing: 0.04em; }
+  .punk .stats { display: flex; gap: 8px; flex-wrap: wrap; }
+  .punk .stats span { font-family: "Archivo Black"; font-size: 13px; background: #fff; color: #000; padding: 4px 10px; transform: rotate(-1deg); }
+  .punk .stats span:nth-child(2) { background: #e2231a; transform: rotate(1.5deg); }
+  .punk .statsrow { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 16px; flex-wrap: wrap; }
+  .punk .fileshead { font-family: "Archivo Black"; font-size: 11px; color: #e2231a; letter-spacing: 0.1em; margin-top: 22px; border-top: 2px solid #fff; padding-top: 12px; }
+  .punk .files { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+  .punk .files span { font-family: "JetBrains Mono"; font-size: 11px; background: #f2f2f2; color: #000; padding: 3px 8px; }
+  .punk .files span:nth-child(3n) { transform: rotate(-1.5deg); }
+
+  /* ============ 05 BAROQUE / VICTORIAN · クトゥルフ ============ */
+  .vic { position: relative; min-height: 440px; background: #160a0e; color: #e8dcc0; padding: 40px; text-align: center; overflow: hidden;
+    background-image: radial-gradient(circle at 50% 0%, rgba(122,90,46,.18), transparent 60%); }
+  .vic .vframe { position: absolute; inset: 16px; border: 2px solid #7a5a2e; pointer-events: none; }
+  .vic .vframe::before { content: ""; position: absolute; inset: 5px; border: 1px solid rgba(194,162,90,.45); }
+  .vic .corner { position: absolute; color: #c2a25a; }
+  .vic .corner.tl { top: 22px; left: 22px; }
+  .vic .corner.tr { top: 22px; right: 22px; transform: scaleX(-1); }
+  .vic .corner.bl { bottom: 22px; left: 22px; transform: scaleY(-1); }
+  .vic .corner.br { bottom: 22px; right: 22px; transform: scale(-1,-1); }
+  .vic .inner { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; padding: 14px 20px; }
+  .vic .eyebrow { font-family: "Cinzel", serif; font-weight: 700; letter-spacing: 0.28em; font-size: 15px; color: #c2a25a; margin-top: 12px; }
+  .vic .fleuron { color: #c2a25a; margin-top: 14px; }
+  .vic .vjp { font-family: "Shippori Mincho", serif; font-weight: 700; font-size: 34px; color: #f2e6c7; margin-top: 12px; letter-spacing: 0.1em; }
+  .vic .vdiv { display: flex; align-items: center; justify-content: center; gap: 14px; color: #c2a25a; margin: 20px 0; font-size: 13px; }
+  .vic .vdiv i { width: 90px; height: 1px; background: #b7965280; }
+  .vic .vlede { font-family: "Shippori Mincho", serif; font-size: 14px; line-height: 2.05; color: #cbba92; max-width: 480px; }
+  .vic .vmeta { font-family: "Cinzel", serif; font-size: 12px; letter-spacing: 0.22em; color: #c2a25a; margin-top: 20px; }
+  .vic .vlisthead { font-family: "Cinzel", serif; font-size: 11px; letter-spacing: 0.26em; color: #c2a25a; margin-top: 22px; }
+  .vic .vlist { font-family: "Shippori Mincho", serif; font-size: 14px; color: #dccea2; line-height: 2.2; margin-top: 8px; max-width: 520px; }
+  .vic .vlist .sep { color: #7a5a2e; margin: 0 8px; }
+
+  /* ============ 06 MEMPHIS · エモクロア ============ */
+  .memphis { min-height: 380px; background: #f4f1e8; padding: 32px; color: #1a1a1a; overflow: hidden; }
+  .memphis .shapes { position: absolute; inset: 0; pointer-events: none; }
+  .memphis h3 { font-family: "Poppins"; font-weight: 900; font-size: 44px; color: #1a1a1a; letter-spacing: -0.01em; position: relative; }
+  .memphis h3 .hl { color: #ff5c7a; }
+  .memphis .en { font-family: "Poppins"; font-weight: 700; font-size: 13px; letter-spacing: 0.2em; color: #00b3a4; position: relative; }
+  .memphis .lede { font-family: "Zen Kaku Gothic New"; font-size: 14px; color: #333; margin-top: 16px; max-width: 420px; position: relative; line-height: 1.7; }
+  .memphis .chips { display: flex; gap: 10px; margin-top: 22px; flex-wrap: wrap; position: relative; }
+  .memphis .chips span { font-family: "Poppins"; font-weight: 700; font-size: 13px; padding: 7px 14px; border: 2px solid #1a1a1a; }
+  .memphis .chips span:nth-child(1) { background: #ffd23f; }
+  .memphis .chips span:nth-child(2) { background: #4d9de0; color: #fff; }
+  .memphis .shapes .sq { transform-box: fill-box; transform-origin: center; transform: rotate(20deg); }
+  .memphis .mlisthead { font-family: "Poppins"; font-weight: 800; font-size: 12px; letter-spacing: 0.08em; color: #00b3a4; margin-top: 22px; position: relative; }
+  .memphis .mlist { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; position: relative; }
+  .memphis .mlist span { font-family: "Zen Kaku Gothic New"; font-weight: 700; font-size: 12px; padding: 5px 11px; border: 2px solid #1a1a1a; background: #fff; color: #1a1a1a; }
+
+  /* ============ 07 BAUHAUS · その他アナログ ============ */
+  .bau { min-height: 380px; background: #e8e4d8; display: grid; grid-template-columns: 300px 1fr; color: #111; }
+  .bau .art { position: relative; background: #1a1a1a; overflow: hidden; }
+  .bau .art .c1 { position: absolute; top: -40px; left: -40px; width: 200px; height: 200px; border-radius: 50%; background: #e2231a; }
+  .bau .art .t1 { position: absolute; bottom: 0; left: 0; width: 0; height: 0; border-left: 150px solid transparent; border-right: 150px solid transparent; border-bottom: 190px solid #ffd23f; }
+  .bau .art .s1 { position: absolute; top: 120px; right: -30px; width: 130px; height: 130px; background: #2b6cb0; transform: rotate(18deg); }
+  .bau .r { padding: 32px 30px; display: flex; flex-direction: column; }
+  .bau h3 { font-family: "Archivo Black"; font-size: 34px; line-height: 1; letter-spacing: -0.01em; }
+  .bau .jp { font-family: "Zen Kaku Gothic New"; font-weight: 900; font-size: 24px; margin-top: 8px; }
+  .bau .lede { font-family: "Zen Kaku Gothic New"; font-weight: 500; font-size: 15px; color: #333; margin-top: 14px; line-height: 1.7; }
+  .bau .listhead { font-family: "Archivo Black"; font-size: 12px; letter-spacing: 0.06em; margin-top: auto; display: inline-flex; align-items: center; gap: 9px; }
+  .bau .listhead::before { content: ""; width: 14px; height: 14px; background: #e2231a; }
+  .bau .list { font-family: "Zen Kaku Gothic New"; font-weight: 700; font-size: 15px; color: #111; margin-top: 10px; line-height: 1.7; }
+
+  /* ============ 08 RETRO · 外部リンク ============ */
+  .retro { min-height: 360px; background: #2a1a12; padding: 34px; overflow: hidden; }
+  .retro .stripes { position: absolute; top: 0; right: 0; width: 260px; height: 100%; }
+  .retro .stripes i { position: absolute; right: -80px; top: -60px; width: 300px; height: 60px; border-radius: 30px; }
+  .retro .en { font-family: "Righteous"; font-size: 13px; letter-spacing: 0.2em; color: #f4a259; position: relative; }
+  .retro h3 { font-family: "Righteous"; font-size: 46px; color: #ffdd94; margin-top: 12px; position: relative; text-shadow: 3px 3px 0 #bc4b2b; }
+  .retro .links { margin-top: 22px; display: flex; flex-direction: column; gap: 10px; position: relative; max-width: 460px; }
+  .retro .links a { display: flex; align-items: center; justify-content: space-between; background: #f4ecd8; color: #2a1a12; border-radius: 999px; padding: 12px 22px; font-family: "Righteous"; font-size: 16px; transition: transform .18s; }
+  .retro .links a:hover { transform: translateX(4px); }
+  .retro .links a .tag { font-family: var(--f-mono); font-size: 11px; background: #f4a259; padding: 3px 10px; border-radius: 999px; }
+
+  /* ============ 09 MODERNISM · Contact ============ */
+  .mod { height: 300px; background: #f5f4f0; display: grid; grid-template-columns: 1.4fr 1fr; color: #111; font-family: "Inter"; }
+  .mod .left { padding: 32px 34px; display: flex; flex-direction: column; justify-content: flex-end; border-right: 1px solid #111; }
+  .mod h3 { font-weight: 900; font-size: 46px; letter-spacing: -0.03em; line-height: 1.0; }
+  .mod .jp { font-family: "Zen Kaku Gothic New"; font-weight: 700; font-size: 16px; margin-top: 12px; color: #333; }
+  .mod .right { display: flex; flex-direction: column; }
+  .mod .chan { flex: 1; display: flex; align-items: center; justify-content: space-between; padding: 0 28px; border-bottom: 1px solid #111; font-weight: 700; font-size: 21px; letter-spacing: -0.01em; transition: padding .18s; }
+  .mod .chan:last-child { border-bottom: none; }
+  .mod .chan .ar { font-weight: 400; font-size: 20px; }
+  .mod .chan.accent { background: #2b6cb0; color: #fff; }
+  .mod .chan:hover { padding-left: 34px; }
+
+  @media (max-width: 720px) {
+    .suprem .s-pic { width: 480px; right: -120px; }
+    .swiss h3 { font-size: 40px; }
+    .bau { grid-template-columns: 1fr; }
+    .bau .art { min-height: 160px; }
+    .mod { grid-template-columns: 1fr; height: auto; }
+    .mod .left { border-right: none; border-bottom: 1px solid #111; }
+    .mod .chan { padding: 18px 28px; }
+    .nav-links { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner glass">
+    <a class="brand" href="#top">
+      <img class="brand-ava" src="/assets/icon.webp" alt="bidri" />
+      <b>bidri</b><span class="dev">.dev</span>
+    </a>
+    <nav class="nav-links">
+      <a href="#arknights">Games</a>
+      <a href="#murder-mystery">TRPG</a>
+      <a href="#links">Links</a>
+    </nav>
+    <a class="nav-cta" href="#contact">contact</a>
   </div>
+</header>
 
-  <div class="game-card">
-    <div class="game-card-body">
-      <h2 id="endfield">アークナイツ：エンドフィールド</h2>
-      <img src="/assets/endfield.webp" alt="endfield" />
-      <p>ひとまず事前登録からぼちぼちやってる管理人。<br />
-        ストーリーは大衆向けになっててあんまり刺さってないけど、思ったより本家とのクロスオーバー多くて戸惑ってる。<br />
-        Satisfactoryとか工業ゲーム好きなので、そういう意味では刺さってる。</p>
+<main class="stack" id="top">
+
+  <!-- 01 アークナイツ · Suprematism -->
+  <section class="sec" id="arknights" data-bg="#cdd2d8">
+    <div class="card suprem">
+      <div class="s s-red"></div>
+      <div class="s s-yellow"></div>
+      <div class="s s-bar"></div>
+      <div class="s s-circle"></div>
+      <div class="s s-line"></div>
+      <div class="s s-pic"></div>
+      <div class="s-title">
+        <h3>ARKNIGHTS</h3>
+        <div class="jp">アークナイツ</div>
+        <div class="en">事前登録から毎日やってるドクター。<br>全オペレーター昇進済み、全勲章取得済み。</div>
+      </div>
     </div>
-  </div>
+  </section>
 
-  <div class="game-card">
-    <div class="game-card-body">
-      <h2 id="fgo">Fate/Grand Order</h2>
-      <img src="/assets/fgo.webp" alt="fgo" />
-      <p>事前登録からやっていたような、そうでもないようなマスター。何度か離れてたこともある。<br />
-        メインストーリーが好きだけど、2部が終わって（？）燃え尽きた感。<br />
-        ガチャは性能見てスルーしがち。★5含め育ててないサーヴァントも多め。</p>
+  <!-- 02 エンドフィールド · Swiss -->
+  <section class="sec" id="endfield" data-bg="#ffd400">
+    <div class="card swiss">
+      <div class="l">
+        <div class="headrow">
+          <div><h3>Endfield</h3><div class="jp">エンドフィールド</div></div>
+        </div>
+        <p class="lede">事前登録から毎日やってる管理人。あんま好みじゃないけど、無印を楽しむためにやってる感じ。Satisfactoryとか好きなので工業は楽しい。</p>
+      </div>
+      <div class="pic"></div>
     </div>
-  </div>
+  </section>
 
-  <div class="game-card">
-    <div class="game-card-body">
-      <h2 id="murder-mystery">マーダーミステリー</h2>
-      <p>2022年くらいから。プレイヤーは200回超、ゲームマスターは100回くらい。<br />
-        最初の1年くらいは鬼のようにやってたけど、最近は程々。<br />
-        ロールプレイ、推理が好き。デスゲーム系はNot for me</p>
-
-      <ScrollableList
-        title="GMできるシナリオ"
-        items={[
-          '雨の世界に太陽を',
-          '憐れな百合はSを捧げる（2人用）',
-          '忌み名は鬼録に二度登る',
-          'IL PENTITO',
-          'ウルイの血族',
-          'エイダ',
-          'エドワーズ伯爵家の使用人～5人の憂鬱な使用人～',
-          '皆既月食～but not Lunar Eclipse～',
-          '怪盗エイプリルと七人の探偵たち',
-          '肩幅お嬢様殺人事件',
-          '記憶回復センターへようこそ！',
-          '奇巌渓の殺人',
-          '狂気山脈 陰謀の分水嶺／星ふる天辺／薄明三角点',
-          'J・モリアーティの暗躍',
-          'たしかにヒロインを虐めてましたがヒロインを殺したのはわたくしではなくってよ！',
-          '探偵時切灰斗氏の事件録 Episode 00:着飾った令嬢',
-          'くちなしのきみへ',
-          '少女はSに溺れる',
-          '南極地点X',
-          'バード将軍の死 改訂版',
-          'ブルーホールミステリー～夜明けのまちと「奇跡のブルー」～',
-          'マキシマムDEBU100',
-          'ゆっくりと苦しみをもって',
-          '夜の蛙は眠らない',
-        ]}
-      />
-
-      <ScrollableList
-        title="GM準備する予定のシナリオ"
-        items={[
-          'ウィンター号の帰還者',
-          '廻煌館殺人事件',
-          'キャラベラ・アタランテ殺人事件',
-          '三坂大学オカ研合宿殺人事件',
-          '龍神様の祟り',
-          '墜灯',
-        ]}
-      />
+  <!-- 03 Fate/Grand Order · Art Deco -->
+  <section class="sec" id="fgo" data-bg="#0b0e34">
+    <div class="card deco">
+      <div class="frame"></div>
+      <svg class="sun" width="120" height="40" viewBox="0 0 120 40">
+        <g stroke="#c9a24b" stroke-width="1">
+          <path d="M60 40 V6 M60 40 L44 10 M60 40 L76 10 M60 40 L30 16 M60 40 L90 16 M60 40 L18 24 M60 40 L102 24"/>
+        </g>
+      </svg>
+      <div class="content">
+        <h3>Fate/Grand Order</h3>
+        <div class="divider"><i></i>◆<i></i></div>
+        <div class="caption">事前登録からやってた気がするマスター。何度か離れてたことも。<br>2部終わってほとんど燃え尽き中。</div>
+        <div class="pic"></div>
+      </div>
     </div>
-  </div>
+  </section>
 
-  <div class="game-card">
-    <div class="game-card-body">
-      <h2 id="coc">クトゥルフ神話TRPG</h2>
-      <p>2022年くらいから。プレイヤーは60回くらい、キーパーは10回くらい。<br />
-        6版、7版の基本ルールブックのみ所持。<br />
-        クラシックなシナリオが好き。タイマンはNot for me<br />
-        ハウスルールはほぼないです。6版で戦闘中以外もCCBを使うくらい。</p>
-
-      <ScrollableList
-        title="KPできるシナリオ"
-        items={[
-          'ANOMALIA',
-          '狂気山脈 ～邪神の山嶺～',
-          'コーヒー一杯分の恐怖',
-          '新世界より',
-          '魔法少女は死を唄え',
-        ]}
-      />
-
-      <ScrollableList
-        title="KP準備する予定のシナリオ"
-        items={[
-          'αの謳うメメント・モリ',
-          '井藤チアキと云ふ女',
-          'ウィルマゼア急行の一番長い運行記録',
-          'ドルペガ',
-        ]}
-      />
+  <!-- 04 マーダーミステリー · Punk -->
+  <section class="sec" id="murder-mystery" data-bg="#241038">
+    <div class="card punk">
+      <div class="rn">
+        <span class="b">マ</span><span class="w">ー</span><span class="r">ダー</span><span class="b">ミス</span><span class="i">テリー</span>
+      </div>
+      <div class="sub">ロールプレイと推理が好き。デスゲームは好きじゃない。</div>
+      <div class="statsrow">
+        <div class="stats"><span>PL 200+</span><span>GM 100+</span></div>
+      </div>
+      <div class="fileshead">GMできるシナリオ</div>
+      <div class="files">
+        {murderMysteryScenarios.map((s) => <span>{s}</span>)}
+      </div>
     </div>
-  </div>
+  </section>
 
-  <div class="game-card">
-    <div class="game-card-body">
-      <h2 id="emoklore">エモクロアTRPG</h2>
-      <p>2023年くらいから。プレイヤーは10回くらい、ディーラーは10回くらい。<br />
-        手軽でダイスたくさん振れるのが好き。</p>
-
-      <ScrollableList
-        title="DLできるシナリオ"
-        items={[
-          'アルカ・サンクタ（オリジナル）',
-          'ウルトラヒロイック',
-          'ウルトラヒロイック2',
-          'オリカミ',
-          '新約・八尺さま',
-          'マジックブルーの境界線',
-        ]}
-      />
-
-      <h3>アークナイツ拡張ルール</h3>
-
-      <p>エモクロアTRPGでアークナイツを遊べる非公式の追加ルールを作りました→<a
-          href="https://side-oripathy.bidri.dev/"
-          target="_blank"
-          rel="noopener noreferrer">サイド・オリパシー</a
-        ></p>
-
-      <ScrollableList
-        title="DL準備する予定のシナリオ"
-        items={[
-          '統合戦略I 緋き舞台の幕間劇（製作中）',
-          'ドクター救出作戦（製作中）',
-          '無明に射すもの（製作中）',
-        ]}
-      />
+  <!-- 05 クトゥルフ · Baroque -->
+  <section class="sec" id="coc" data-bg="#210910">
+    <div class="card vic">
+      <div class="vframe"></div>
+      <svg class="corner tl" width="52" height="52" viewBox="0 0 52 52" fill="none"><path d="M6 50 C6 26 26 6 50 6 M6 50 C6 34 14 26 28 24 M50 6 C34 6 26 14 24 28" stroke="currentColor" stroke-width="1.3"/><circle cx="25" cy="25" r="2.4" fill="currentColor"/></svg>
+      <svg class="corner tr" width="52" height="52" viewBox="0 0 52 52" fill="none"><path d="M6 50 C6 26 26 6 50 6 M6 50 C6 34 14 26 28 24 M50 6 C34 6 26 14 24 28" stroke="currentColor" stroke-width="1.3"/><circle cx="25" cy="25" r="2.4" fill="currentColor"/></svg>
+      <svg class="corner bl" width="52" height="52" viewBox="0 0 52 52" fill="none"><path d="M6 50 C6 26 26 6 50 6 M6 50 C6 34 14 26 28 24 M50 6 C34 6 26 14 24 28" stroke="currentColor" stroke-width="1.3"/><circle cx="25" cy="25" r="2.4" fill="currentColor"/></svg>
+      <svg class="corner br" width="52" height="52" viewBox="0 0 52 52" fill="none"><path d="M6 50 C6 26 26 6 50 6 M6 50 C6 34 14 26 28 24 M50 6 C34 6 26 14 24 28" stroke="currentColor" stroke-width="1.3"/><circle cx="25" cy="25" r="2.4" fill="currentColor"/></svg>
+      <div class="inner">
+        <div class="eyebrow">CALL OF CTHULHU</div>
+        <svg class="fleuron" width="90" height="20" viewBox="0 0 90 20" fill="none"><path d="M45 4 C40 10 30 10 30 15 C30 18 34 18 36 15 M45 4 C50 10 60 10 60 15 C60 18 56 18 54 15 M45 6 V16" stroke="currentColor" stroke-width="1.2"/><circle cx="45" cy="4" r="2" fill="currentColor"/></svg>
+        <div class="vjp">クトゥルフ神話TRPG</div>
+        <div class="vdiv"><i></i>✧<i></i></div>
+        <p class="vlede">クラシックなシナリオが好き。タイマンは好きじゃない。<br>必要に応じてアプリのプレミアム登録してる。</p>
+        <div class="vmeta">PLAYER 60+ · KEEPER 10+</div>
+        <div class="vlisthead">KP できるシナリオ</div>
+        <div class="vlist">{cocScenarios.map((s, i) => <>{i > 0 && <span class="sep">❧</span>}{s}</>)}</div>
+      </div>
     </div>
-  </div>
+  </section>
 
-  <div class="game-card">
-    <div class="game-card-body">
-      <h2 id="other-games">その他アナログゲーム</h2>
-      <h3>謎解き</h3>
-      <ScrollableList
-        title="GMできるゲーム"
-        items={[
-          '宇宙船からの脱出',
-          '風雲弥生城',
-          'カジノナゾベガス',
-        ]}
-      />
+  <!-- 06 エモクロア · Memphis -->
+  <section class="sec" id="emoclore" data-bg="#3cafdd">
+    <div class="card memphis">
+      <svg class="shapes" width="100%" height="100%">
+        <circle cx="88%" cy="30%" r="34" fill="none" stroke="#ff5c7a" stroke-width="6"/>
+        <rect class="sq" x="70%" y="10%" width="26" height="26" fill="#ffd23f"/>
+        <g fill="#4d9de0"><circle cx="90%" cy="60%" r="5"/><circle cx="94%" cy="66%" r="5"/><circle cx="86%" cy="66%" r="5"/><circle cx="90%" cy="72%" r="5"/></g>
+      </svg>
+      <div class="en">EMOCLORE</div>
+      <h3>エモ<span class="hl">クロア</span></h3>
+      <div class="lede">手軽にダイスをたくさん振れるのが好き。DLシナリオも制作中。</div>
+      <div class="chips"><span>PL 10+</span><span>DL 10+</span></div>
+      <div class="mlisthead">DLできるシナリオ</div>
+      <div class="mlist">{emocloreScenarios.map((s) => <span>{s}</span>)}</div>
     </div>
-  </div>
-</BaseLayout>
+  </section>
+
+  <!-- 07 その他アナログ · Bauhaus -->
+  <section class="sec" id="analog" data-bg="#0b1640">
+    <div class="card bau">
+      <div class="art"><div class="c1"></div><div class="t1"></div><div class="s1"></div></div>
+      <div class="r">
+        <h3>ANALOG</h3>
+        <div class="jp">その他アナログ</div>
+        <div class="lede">謎解き・脱出ゲーム・ボードゲームなど</div>
+        <div class="listhead">GMできるシナリオ一覧</div>
+        <div class="list">宇宙船からの脱出　/　風雲弥生城　/　カジノナゾベガス</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 08 外部リンク · Retro -->
+  <section class="sec" id="links" data-bg="#0a2740">
+    <div class="card retro">
+      <div class="stripes"><i style="background:#f4a259"></i><i style="background:#e07a5f; top:20px"></i><i style="background:#bc4b2b; top:100px"></i><i style="background:#ffdd94; top:180px"></i></div>
+      <div class="en">EXTERNAL LINKS</div>
+      <h3>外部リンク</h3>
+      <div class="links">
+        <a href="https://side-oripathy.bidri.dev/" target="_blank" rel="noopener noreferrer">サイド・オリパシー<span class="tag">エモクロア拡張ルール</span></a>
+        <a href="https://www.notion.so/d88975d51a794b7f82bc5ceb3615e923?v=e72bdc57ee984301b99c015fac78f4d3&source=copy_link" target="_blank" rel="noopener noreferrer">予定カレンダー<span class="tag">Notion</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 09 Contact · Modernism -->
+  <section class="sec" id="contact" data-bg="#0f1a30">
+    <div class="card mod">
+      <div class="left">
+        <div>
+          <h3>CONTACT</h3>
+          <div class="jp">連絡先</div>
+        </div>
+      </div>
+      <div class="right">
+        <a class="chan accent" href="https://x.com/bidri__" target="_blank" rel="noopener noreferrer">X (Twitter)<span class="ar">↗</span></a>
+        <a class="chan" href="https://bsky.app/profile/bidri.bsky.social" target="_blank" rel="noopener noreferrer">Bluesky<span class="ar">↗</span></a>
+        <a class="chan" href="https://talto.cc/users/pj9sEOdVqLPCPg1Hy0rv8xAeFru1" target="_blank" rel="noopener noreferrer">TALTO<span class="ar">↗</span></a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-foot">
+  <span>© {currentYear} bidri</span>
+</footer>
+
+<script is:inline>
+  (function () {
+    var secs = [].slice.call(document.querySelectorAll('.sec[data-bg]'));
+    if (!secs.length) return;
+    var raf = null;
+    function update() {
+      raf = null;
+      var mid = window.innerHeight * 0.5;
+      var best = null, bestDist = Infinity;
+      for (var i = 0; i < secs.length; i++) {
+        var r = secs[i].getBoundingClientRect();
+        var c = r.top + r.height / 2;
+        var d = Math.abs(c - mid);
+        if (d < bestDist) { bestDist = d; best = secs[i]; }
+      }
+      if (best) document.body.style.backgroundColor = best.getAttribute('data-bg');
+    }
+    function onScroll() { if (raf == null) raf = requestAnimationFrame(update); }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    update();
+  })();
+</script>
+
+</body>
+</html>
