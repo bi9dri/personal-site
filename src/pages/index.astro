@@ -212,7 +212,9 @@ const ga4Script = `<!-- Google tag (gtag.js) -->
   .memphis { min-height: 380px; background: #f4f1e8; padding: 32px; color: #1a1a1a; overflow: hidden; }
   .memphis .shapes { position: absolute; inset: 0; pointer-events: none; }
   .memphis h3 { font-family: "Poppins"; font-weight: 900; font-size: 44px; color: #1a1a1a; letter-spacing: -0.01em; position: relative; }
-  .memphis h3 .hl { color: #ff5c7a; }
+  .memphis h3 .hl-emo { color: #ff5c7a; }
+  .memphis h3 .hl-klore { color: #1a1a1a; }
+  .memphis h3 .hl-trpg { color: #00b3a4; }
   .memphis .en { font-family: "Poppins"; font-weight: 700; font-size: 13px; letter-spacing: 0.2em; color: #00b3a4; position: relative; }
   .memphis .lede { font-family: "Zen Kaku Gothic New"; font-size: 14px; color: #333; margin-top: 16px; max-width: 420px; position: relative; line-height: 1.7; }
   .memphis .chips { display: flex; gap: 10px; margin-top: 22px; flex-wrap: wrap; position: relative; }
@@ -388,8 +390,8 @@ const ga4Script = `<!-- Google tag (gtag.js) -->
         <g fill="#4d9de0"><circle cx="90%" cy="60%" r="5"/><circle cx="94%" cy="66%" r="5"/><circle cx="86%" cy="66%" r="5"/><circle cx="90%" cy="72%" r="5"/></g>
       </svg>
       <div class="en">EMO-KLORE TRPG</div>
-      <h3>エモ<span class="hl">クロアTRPG</span></h3>
-      <div class="lede">手軽にダイスをたくさん振れるのが好き。DLシナリオも制作中。</div>
+      <h3><span class="hl-emo">エモ</span><span class="hl-klore">クロア</span><span class="hl-trpg">TRPG</span></h3>
+      <div class="lede">手軽にダイスをたくさん振れるのが好き。</div>
       <div class="chips"><span>PL 10+</span><span>DL 10+</span></div>
       <div class="mlisthead">DLできるシナリオ</div>
       <div class="mlist">{emocloreScenarios.map((s) => <span>{s}</span>)}</div>
