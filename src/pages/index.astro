@@ -266,14 +266,60 @@ const ga4Script = `<!-- Google tag (gtag.js) -->
   .mod .chan:hover { padding-left: 34px; }
 
   @media (max-width: 720px) {
-    .suprem .s-pic { width: 480px; right: -120px; }
+    .stack { padding: 32px 16px 28px; gap: 34px; }
     .swiss h3 { font-size: 40px; }
     .bau { grid-template-columns: 1fr; }
-    .bau .art { min-height: 160px; }
+    .bau .art { min-height: 200px; }
     .mod { grid-template-columns: 1fr; height: auto; }
-    .mod .left { border-right: none; border-bottom: 1px solid #111; }
-    .mod .chan { padding: 18px 28px; }
+    .mod .left { border-right: none; border-bottom: 1px solid #111; padding: 26px 24px; }
+    .mod .chan { padding: 18px 24px; }
     .nav-links { display: none; }
+
+    /* Suprematism → reflow: shapes as a top band, image full + uncropped, title below */
+    .suprem { min-height: 0; display: flex; flex-direction: column; padding: 20px 20px 24px; }
+    .suprem .s { position: absolute; }
+    .suprem .s-red { width: 92px; height: 68px; left: 20px; top: 20px; }
+    .suprem .s-yellow { width: 32px; height: 32px; left: 132px; top: 30px; }
+    .suprem .s-bar { width: 150px; height: 16px; left: auto; right: 16px; top: 30px; transform: rotate(20deg); }
+    .suprem .s-circle { width: 40px; height: 40px; left: auto; right: 24px; top: 58px; }
+    .suprem .s-line { width: 30px; height: 30px; left: 124px; top: 74px; }
+    .suprem .s-pic { position: relative; width: 100%; right: auto; top: auto; margin-top: 120px; box-shadow: 6px 8px 0 rgba(17,17,17,.12); }
+    .suprem .s-title { position: relative; left: auto; bottom: auto; margin-top: 18px; }
+    .suprem .s-title h3 { font-size: 34px; }
+    .suprem .s-title .en { max-width: none; }
+
+    /* Art Deco → let image fill, cover instead of shrink */
+    .deco { height: auto; padding: 20px; }
+    .deco .content { position: relative; inset: auto; }
+    .deco .frame { inset: 12px; }
+    .deco h3 { font-size: 25px; margin-top: 30px; letter-spacing: 0.08em; }
+    .deco .pic { flex: none; aspect-ratio: 4 / 3; background-size: cover; background-position: center 30%; margin-top: 12px; }
+
+    /* Swiss → tighten */
+    .swiss .l { padding: 24px 22px 18px; }
+
+    /* Punk / Baroque / Memphis → reduce chrome padding */
+    .punk { padding: 22px 20px; }
+    .punk .rn span { font-size: 32px; }
+    .vic { padding: 30px 20px; }
+    .vic .inner { padding: 10px 6px; }
+    .vic .vjp { font-size: 27px; }
+    .vic .vlede, .vic .vlist { max-width: none; }
+    .memphis { padding: 24px 22px; }
+    .memphis h3 { font-size: 36px; }
+    .bau .r { padding: 24px 22px; }
+    .retro { padding: 26px 22px; }
+    .retro h3 { font-size: 38px; }
+  }
+
+  @media (max-width: 420px) {
+    .stack { padding: 26px 12px 24px; gap: 30px; }
+    .suprem .s-pic { margin-top: 104px; }
+    .swiss h3 { font-size: 34px; }
+    .punk .rn span { font-size: 27px; }
+    .memphis h3 { font-size: 31px; }
+    .deco h3 { font-size: 21px; }
+    .vic .vjp { font-size: 23px; }
   }
 </style>
 </head>
