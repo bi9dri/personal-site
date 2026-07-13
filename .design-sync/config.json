@@ -1,0 +1,7 @@
+{
+  "projectId": "856debe8-c37a-470d-8b0a-f08ab66ebb13",
+  "projectName": "bidri.dev",
+  "direction": "repo-to-design",
+  "generator": ".design-sync/gen-design-html.mjs",
+  "remoteFile": "index.html"
+}
