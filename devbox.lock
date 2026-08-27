@@ -52,54 +52,6 @@
     "github:NixOS/nixpkgs/nixpkgs-unstable": {
       "last_modified": "2026-04-10T03:55:24Z",
       "resolved": "github:NixOS/nixpkgs/9d29d5f667d7467f98efc31881e824fa586c927e?lastModified=1775793324"
-    },
-    "pinact@4.0.0": {
-      "last_modified": "2026-06-27T07:37:20Z",
-      "resolved": "github:NixOS/nixpkgs/3d46470bb3030020f7e1361f33514854f5bfa86d#pinact",
-      "source": "devbox-search",
-      "version": "4.0.0",
-      "systems": {
-        "aarch64-darwin": {
-          "outputs": [
-            {
-              "name": "out",
-              "path": "/nix/store/brdw6yn1jf4rqc4lcxwzdf2ngnvi1i53-pinact-4.0.0",
-              "default": true
-            }
-          ],
-          "store_path": "/nix/store/brdw6yn1jf4rqc4lcxwzdf2ngnvi1i53-pinact-4.0.0"
-        },
-        "aarch64-linux": {
-          "outputs": [
-            {
-              "name": "out",
-              "path": "/nix/store/mbcy1yyjqi7n01gyc5hcyhi2nvl4xrrh-pinact-4.0.0",
-              "default": true
-            }
-          ],
-          "store_path": "/nix/store/mbcy1yyjqi7n01gyc5hcyhi2nvl4xrrh-pinact-4.0.0"
-        },
-        "x86_64-darwin": {
-          "outputs": [
-            {
-              "name": "out",
-              "path": "/nix/store/iiphhb9d0hzhg9snck98ai74qvf5xn66-pinact-4.0.0",
-              "default": true
-            }
-          ],
-          "store_path": "/nix/store/iiphhb9d0hzhg9snck98ai74qvf5xn66-pinact-4.0.0"
-        },
-        "x86_64-linux": {
-          "outputs": [
-            {
-              "name": "out",
-              "path": "/nix/store/4dhy0lbj7jas68wyywjkzqnjic7iz3cm-pinact-4.0.0",
-              "default": true
-            }
-          ],
-          "store_path": "/nix/store/4dhy0lbj7jas68wyywjkzqnjic7iz3cm-pinact-4.0.0"
-        }
-      }
     }
   }
 }

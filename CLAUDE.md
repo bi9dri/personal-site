@@ -64,7 +64,14 @@ devbox run -- bun run preview # ビルド結果プレビュー
 - `icon.webp` — ナビのアバター & favicon
 - `arknights.webp` / `endfield.webp` / `fgo.webp` — 各ゲームカードの背景
 
-パッケージ追加時は固定バージョン指定を推奨（例: `bun add package@1.2.3`）
+## Dependency Management
+
+- **固定バージョンのみ** — `^` / `~` を使わない（例: `bun add package@1.2.3`）。サプライチェーン対策。
+- **公開から 7 日以上経ったバージョンを使う**（セキュリティ更新を除く）。公開直後に発覚する悪意あるリリースを避ける。
+- **GitHub Actions** は外部 action を full commit SHA で pin する（タグ／ブランチ不可）。
+- **更新は Renovate（GitHub App, `.github/renovate.json5`）が提案する** — 上記 3 つのルールは Renovate 側で強制している。手でバージョンを上げず、Renovate の PR をレビューする。
+  - bun の更新は `devbox.json` / `packageManager` / `@types/bun` をまとめた 1 PR で来るが、`devbox.lock` は Renovate が再生成できない。ブランチ上で `devbox install` を実行してからマージする。
+  - Renovate PR で CI が落ちたら、PR を閉じずにそのブランチで直す（新 API への追従など）。
 
 ## Deployment
 
