@@ -47,6 +47,47 @@ const emocloreScenarios = [
   'マジックブルーの境界線',
 ];
 
+const influenceWorks = [
+  'もののけ姫',
+  'スーパーマリオRPG',
+  'ファイナルファンタジータクティクス',
+  'ロード・オブ・ザ・リング',
+  'NARUTO',
+  '鋼の錬金術師',
+  'エルリック・サーガ',
+  'サモンナイト エクステーゼ 夜明けの翼',
+  '空の軌跡',
+  'D.Gray-man',
+  'Kaguya ～月のウサギの銀の方舟～',
+  'クロノ・トリガー',
+  'DARKER THAN BLACK -流星の双子-',
+  '月姫',
+  'Fate/stay night',
+  '伝説の勇者の伝説',
+  'ひぐらしのなく頃に',
+  'テイルズ・オブ・ファンタジア',
+  'BALDR SKY',
+  '空の境界',
+  '君が望む永遠',
+  '花咲くいろは',
+  '東京レイヴンズ',
+  'ドラッグオンドラグーン3',
+  'ブレイクブレイド',
+  'ALDNOAH.ZERO',
+  'SHIROBAKO',
+  'GANGSTA.',
+  '乱歩奇譚 Game of Laplace',
+  '暁のヨナ',
+  '幼女戦記',
+  '機動戦士ガンダム 鉄血のオルフェンズ',
+  '攻殻機動隊 STAND ALONE COMPLEX',
+  'アークナイツ',
+  '僕のヒーローアカデミア',
+  '兄の嫁と暮らしています。',
+  'ハイキュー!!',
+  'Demons Roots',
+];
+
 const ga4Script = `<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-TH1DBNP0G2"></script>
 <script>
@@ -241,7 +282,26 @@ const ga4Script = `<!-- Google tag (gtag.js) -->
   .bau .listhead::before { content: ""; width: 14px; height: 14px; background: #e2231a; }
   .bau .list { font-family: "Zen Kaku Gothic New"; font-weight: 700; font-size: 15px; color: #111; margin-top: 10px; line-height: 1.7; }
 
-  /* ============ 08 RETRO · 外部リンク ============ */
+  /* ============ 08 DE STIJL · 影響を受けた作品 ============ */
+  .destijl { background: #f5f4f0; color: #111; padding: 0; }
+  .dst-head { display: grid; grid-template-columns: 184px 1fr; border-bottom: 4px solid #111; }
+  .dst-mark { display: grid; grid-template-columns: 1fr 1fr 1fr; grid-template-rows: 1fr 1fr 1fr; gap: 3px; background: #111; min-height: 168px; }
+  .dst-mark i { display: block; background: #f5f4f0; }
+  .dst-mark .m-red { background: #e2231a; grid-column: 1 / 3; grid-row: 1 / 3; }
+  .dst-mark .m-blue { background: #2b6cb0; grid-column: 3; grid-row: 1 / 3; }
+  .dst-mark .m-yellow { background: #f2b705; grid-column: 1; grid-row: 3; }
+  .dst-mark .m-white { background: #f5f4f0; grid-column: 2 / 4; grid-row: 3; }
+  .dst-titles { padding: 26px 30px; display: flex; flex-direction: column; justify-content: center; }
+  .dst-kicker { font-family: var(--f-mono); font-size: 11px; font-weight: 700; letter-spacing: 0.24em; color: #e2231a; }
+  .dst-titles h3 { font-family: "Archivo Black"; font-weight: 900; font-size: 38px; line-height: 1.0; letter-spacing: -0.02em; margin-top: 10px; }
+  .dst-titles .jp { font-family: var(--f-jp); font-weight: 900; font-size: 22px; margin-top: 4px; }
+  .dst-works { list-style: none; display: flex; flex-wrap: wrap; gap: 12px 26px; padding: 26px 30px 30px; }
+  .dst-work { display: inline-flex; align-items: center; gap: 8px; font-family: var(--f-jp); font-weight: 700; font-size: 14px; line-height: 1.4; color: #111; }
+  .dst-work::before { content: ""; flex: none; width: 8px; height: 8px; background: #e2231a; }
+  .dst-work:nth-child(3n+2)::before { background: #2b6cb0; }
+  .dst-work:nth-child(3n)::before { background: #f2b705; }
+
+  /* ============ 09 RETRO · 外部リンク ============ */
   .retro { min-height: 360px; background: #2a1a12; padding: 34px; overflow: hidden; }
   .retro .stripes { position: absolute; top: 0; right: 0; width: 260px; height: 100%; }
   .retro .stripes i { position: absolute; right: -80px; top: -60px; width: 300px; height: 60px; border-radius: 30px; }
@@ -252,7 +312,7 @@ const ga4Script = `<!-- Google tag (gtag.js) -->
   .retro .links a:hover { transform: translateX(4px); }
   .retro .links a .tag { font-family: var(--f-mono); font-size: 11px; background: #f4a259; padding: 3px 10px; border-radius: 999px; }
 
-  /* ============ 09 MODERNISM · Contact ============ */
+  /* ============ 10 MODERNISM · Contact ============ */
   .mod { height: 300px; background: #f5f4f0; display: grid; grid-template-columns: 1.4fr 1fr; color: #111; font-family: "Inter"; }
   .mod .left { padding: 32px 34px; display: flex; flex-direction: column; justify-content: flex-end; border-right: 1px solid #111; }
   .mod h3 { font-weight: 900; font-size: 46px; letter-spacing: -0.03em; line-height: 1.0; }
@@ -310,6 +370,15 @@ const ga4Script = `<!-- Google tag (gtag.js) -->
     .bau .r { padding: 24px 22px; }
     .retro { padding: 26px 22px; }
     .retro h3 { font-size: 38px; }
+
+    /* De Stijl → stack the mark above the titles, tighten rows */
+    .dst-head { grid-template-columns: 1fr; }
+    .dst-mark { min-height: 96px; }
+    .dst-titles { padding: 20px 22px; }
+    .dst-titles h3 { font-size: 30px; }
+    .dst-titles .jp { font-size: 19px; }
+    .dst-works { gap: 10px 20px; padding: 22px 22px 26px; }
+    .dst-work { font-size: 13px; }
   }
 
   @media (max-width: 420px) {
@@ -320,6 +389,9 @@ const ga4Script = `<!-- Google tag (gtag.js) -->
     .memphis h3 { font-size: 31px; }
     .deco h3 { font-size: 21px; }
     .vic .vjp { font-size: 23px; }
+    .dst-titles h3 { font-size: 26px; }
+    .dst-works { gap: 9px 16px; padding: 20px 16px 22px; }
+    .dst-work { font-size: 12px; }
   }
 </style>
 </head>
@@ -334,6 +406,7 @@ const ga4Script = `<!-- Google tag (gtag.js) -->
     <nav class="nav-links">
       <a href="#arknights">Games</a>
       <a href="#murder-mystery">TRPG</a>
+      <a href="#works">Works</a>
       <a href="#links">Links</a>
     </nav>
     <a class="nav-cta" href="#contact">contact</a>
@@ -459,7 +532,26 @@ const ga4Script = `<!-- Google tag (gtag.js) -->
     </div>
   </section>
 
-  <!-- 08 外部リンク · Retro -->
+  <!-- 08 影響を受けた作品 · De Stijl -->
+  <section class="sec" id="works" data-bg="#c9ced3">
+    <div class="card destijl">
+      <div class="dst-head">
+        <div class="dst-mark" aria-hidden="true">
+          <i class="m-red"></i><i class="m-blue"></i><i class="m-yellow"></i><i class="m-white"></i>
+        </div>
+        <div class="dst-titles">
+          <div class="dst-kicker">REFERENCE</div>
+          <h3>INFLUENCES</h3>
+          <div class="jp">影響を受けた作品</div>
+        </div>
+      </div>
+      <ul class="dst-works">
+        {influenceWorks.map((work) => <li class="dst-work">{work}</li>)}
+      </ul>
+    </div>
+  </section>
+
+  <!-- 09 外部リンク · Retro -->
   <section class="sec" id="links" data-bg="#0a2740">
     <div class="card retro">
       <div class="stripes"><i style="background:#f4a259"></i><i style="background:#e07a5f; top:20px"></i><i style="background:#bc4b2b; top:100px"></i><i style="background:#ffdd94; top:180px"></i></div>
@@ -472,7 +564,7 @@ const ga4Script = `<!-- Google tag (gtag.js) -->
     </div>
   </section>
 
-  <!-- 09 Contact · Modernism -->
+  <!-- 10 Contact · Modernism -->
   <section class="sec" id="contact" data-bg="#0f1a30">
     <div class="card mod">
       <div class="left">
