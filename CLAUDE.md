@@ -9,7 +9,7 @@ bidriの個人サイト。Astroで構築された静的サイト（1ページ構
 
 - **Framework**: Astro v5
 - **Styling**: 素のCSS（`index.astro` 内の `<style is:global>` で完結）
-- **Package Manager**: Bun (devbox 経由)
+- **Package Manager**: Bun (mise 経由)
 - **Hosting**: GitHub Pages (bidri.dev)
 
 ## Directory Structure
@@ -24,7 +24,7 @@ personal-site/
 │   └── CNAME              # カスタムドメイン設定
 ├── .github/workflows/     # CI/CD
 │   └── deploy.yml         # GitHub Pagesデプロイ
-├── devbox.json            # Bun などツールチェーン定義
+├── mise.toml              # Bun などツールチェーン定義
 ├── astro.config.mjs       # Astro設定
 └── package.json
 ```
@@ -32,10 +32,11 @@ personal-site/
 ## Commands
 
 ```bash
-devbox run -- bun install     # 依存関係インストール
-devbox run -- bun run dev     # 開発サーバー起動
-devbox run -- bun run build   # 本番ビルド（dist/に出力）
-devbox run -- bun run preview # ビルド結果プレビュー
+mise install                  # mise.toml のツール（Bun）をインストール
+bun install                   # 依存関係インストール
+bun run dev                   # 開発サーバー起動
+bun run build                 # 本番ビルド（dist/に出力）
+bun run preview               # ビルド結果プレビュー
 ```
 
 ## Page Structure (index.astro)
@@ -70,7 +71,7 @@ devbox run -- bun run preview # ビルド結果プレビュー
 - **公開から 7 日以上経ったバージョンを使う**（セキュリティ更新を除く）。公開直後に発覚する悪意あるリリースを避ける。
 - **GitHub Actions** は外部 action を full commit SHA で pin する（タグ／ブランチ不可）。
 - **更新は Renovate（GitHub App, `.github/renovate.json5`）が提案する** — 上記 3 つのルールは Renovate 側で強制している。手でバージョンを上げず、Renovate の PR をレビューする。
-  - bun の更新は `devbox.json` / `packageManager` / `@types/bun` をまとめた 1 PR で来るが、`devbox.lock` は Renovate が再生成できない。ブランチ上で `devbox install` を実行してからマージする。
+  - bun の更新は `mise.toml` / `packageManager` / `@types/bun` をまとめた 1 PR で来る。
   - Renovate PR で CI が落ちたら、PR を閉じずにそのブランチで直す（新 API への追従など）。
 
 ## Deployment
