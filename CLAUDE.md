@@ -69,8 +69,12 @@ bun run preview               # ビルド結果プレビュー
 
 - **固定バージョンのみ** — `^` / `~` を使わない（例: `bun add package@1.2.3`）。サプライチェーン対策。
 - **公開から 7 日以上経ったバージョンを使う**（セキュリティ更新を除く）。公開直後に発覚する悪意あるリリースを避ける。
-- **GitHub Actions** は外部 action を full commit SHA で pin する（タグ／ブランチ不可）。
-- **更新は Renovate（GitHub App, `.github/renovate.json5`）が提案する** — 上記 3 つのルールは Renovate 側で強制している。手でバージョンを上げず、Renovate の PR をレビューする。
+- **GitHub Actions** は `.github/workflows/actions.lock`（`gh actions-lock`）で commit に固定する。workflow 側は `actions/checkout@v7.0.1` のようなタグで書き、実行時は lockfile に記録された commit が使われる。
+  - `uses:` を追加・変更したら `gh actions-lock` を実行し、workflow と `actions.lock` を同じ PR でコミットする（要 `gh extension install github/gh-actions-lock`）。
+  - `.github/workflows/verify-actions-lock.yml` が `gh actions-lock --verify` で workflow と lockfile の乖離を検出する。
+  - lockfile に載っている依存はリポジトリ設定「Require actions to be pinned to a full-length commit SHA」を満たす扱いになるため、workflow はタグ参照のままでよい。
+- **更新は Renovate（GitHub App, `.github/renovate.json5`）が提案する** — 上記のルールは Renovate と gh actions-lock が強制している。手でバージョンを上げず、Renovate の PR をレビューする。
+  - GitHub Actions の更新 PR では、Renovate が `actions.lock` も同時に再生成する。
   - bun の更新は `mise.toml` / `packageManager` / `@types/bun` をまとめた 1 PR で来る。
   - Renovate PR で CI が落ちたら、PR を閉じずにそのブランチで直す（新 API への追従など）。
 
