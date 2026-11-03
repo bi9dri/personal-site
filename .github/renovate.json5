@@ -31,20 +31,11 @@
 
   packageRules: [
     {
-      // bun のバージョンは devbox.json / packageManager / @types/bun の 3 箇所を
+      // bun のバージョンは mise.toml / packageManager / @types/bun の 3 箇所を
       // 揃える必要がある（scripts/check-bun-version.sh）ため 1 PR にまとめる。
       groupName: "bun",
       matchPackageNames: ["bun", "@types/bun"],
       dependencyDashboardApproval: true,
-    },
-    {
-      // Renovate は devbox.json しか書き換えられず devbox.lock は再生成できない。
-      // ダッシュボードで承認 → ブランチ上で `devbox install` してから CI を通す。
-      matchManagers: ["devbox"],
-      dependencyDashboardApproval: true,
-      prBodyNotes: [
-        "⚠️ `devbox.lock` は Renovate では更新されません。このブランチで `devbox install` を実行してコミットしてください。",
-      ],
     },
     {
       // 影響の小さい minor / patch は 1 PR に集約
