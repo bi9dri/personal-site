@@ -4,6 +4,9 @@
     "config:recommended",
   ],
 
+  automerge: true,
+  automergeType: "pr",
+
   // GitHub Actions の commit 固定は `.github/workflows/actions.lock`（gh actions-lock）が担う。
   // actions.lock があるリポジトリでは、action を更新する PR で Renovate が
   // lockfile も同時に再生成する。追加設定は不要なので digest pinning は有効にしない。
