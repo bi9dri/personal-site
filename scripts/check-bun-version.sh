@@ -1,6 +1,4 @@
 #!/usr/bin/env bash
-# Ensures bun's version stays identical across mise.toml (source of truth) and
-# every package.json's packageManager / devDependencies["@types/bun"].
 set -euo pipefail
 cd "$(dirname "$0")/.."
 
