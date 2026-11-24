@@ -1,58 +1,55 @@
 {
-  $schema: "https://docs.renovatebot.com/renovate-schema.json",
+  $schema: 'https://docs.renovatebot.com/renovate-schema.json',
   extends: [
-    "config:recommended",
+    'config:recommended',
   ],
-
   automerge: true,
-  automergeType: "pr",
-
-  // GitHub Actions の commit 固定は `.github/workflows/actions.lock`（gh actions-lock）が担う。
-  // actions.lock があるリポジトリでは、action を更新する PR で Renovate が
-  // lockfile も同時に再生成する。追加設定は不要なので digest pinning は有効にしない。
-
-  // 固定バージョンのみ（^ / ~ を使わない）
-  rangeStrategy: "pin",
-
-  // 公開から 7 日未満のリリースは PR にしない（ncu --cooldown 7 / pinact -m 7 相当）。
-  // internalChecksFilter: strict で「保留中の新バージョン」も無視する。
-  minimumReleaseAge: "7 days",
-  internalChecksFilter: "strict",
-
-  // 更新候補の一覧 Issue。ncu の結果を確認する運用の置き換え。
-  dependencyDashboard: true,
-  dependencyDashboardOSVVulnerabilitySummary: "unresolved",
+  automergeType: 'pr',
+  rangeStrategy: 'pin',
+  minimumReleaseAge: '7 days',
+  internalChecksFilter: 'strict',
+  dependencyDashboard: {
+    enabled: true,
+    osvVulnerabilitySummary: 'unresolved',
+  },
   osvVulnerabilityAlerts: true,
-
-  semanticCommits: "enabled",
-  commitMessageAction: "更新",
-  commitMessageExtra: "({{currentVersion}} → {{newVersion}})",
+  semanticCommits: 'enabled',
+  commitMessageAction: '更新',
+  commitMessageExtra: '({{currentVersion}} → {{newVersion}})',
   prConcurrentLimit: 5,
-
-  // セキュリティ更新は 7 日ルールを迂回する
   vulnerabilityAlerts: {
     minimumReleaseAge: null,
   },
-
   packageRules: [
     {
-      // bun のバージョンは mise.toml / packageManager / @types/bun の 3 箇所を
-      // 揃える必要がある（scripts/check-bun-version.sh）ため 1 PR にまとめる。
-      groupName: "bun",
-      matchPackageNames: ["bun", "@types/bun", "oven-sh/bun"],
+      groupName: 'bun',
+      matchPackageNames: [
+        'bun',
+        '@types/bun',
+        'oven-sh/bun',
+      ],
       dependencyDashboardApproval: true,
     },
     {
-      // 影響の小さい minor / patch は 1 PR に集約
-      groupName: "non-major dependencies",
-      matchManagers: ["bun", "npm"],
-      matchUpdateTypes: ["minor", "patch"],
-      matchPackageNames: ["!bun", "!@types/bun"],
+      groupName: 'non-major dependencies',
+      matchManagers: [
+        'bun',
+        'npm',
+      ],
+      matchUpdateTypes: [
+        'minor',
+        'patch',
+      ],
+      matchPackageNames: [
+        '!bun',
+        '!@types/bun',
+      ],
     },
     {
-      groupName: "github-actions",
-      matchManagers: ["github-actions"],
+      groupName: 'github-actions',
+      matchManagers: [
+        'github-actions',
+      ],
     },
-    // major は既定どおりパッケージごとの個別 PR
   ],
 }
